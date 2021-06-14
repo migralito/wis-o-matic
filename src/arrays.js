@@ -20,8 +20,12 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.printArrayElements = function (array, console) {
-    // TODO
+    for (const arrayElement of array) {
+        console.log(arrayElement)
+    }
 }
+
+
 
 /**
  * Print to console the elements of an array in reverse order
@@ -45,8 +49,12 @@ exports.printArrayElements = function (array, console) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.printArrayElementsReverseOrder = function (array, console) {
-    // TODO
+    for (let i = array.length - 1; i>-1; i--) {
+        console.log(array[i])
+    }
 }
+
+
 
 /**
  * Return first n elements of an array
@@ -68,7 +76,17 @@ exports.printArrayElementsReverseOrder = function (array, console) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.returnFirstElementsOfArray = function(array, n) {
-    // TODO
+
+    let arrayRecortado = [];
+
+    for (const arrayRecortadoElement of array) {
+        arrayRecortado.push(arrayRecortadoElement)
+
+        if(arrayRecortado.length == n) {
+            return arrayRecortado;
+        }
+    }
+
 }
 
 /**
@@ -91,8 +109,22 @@ exports.returnFirstElementsOfArray = function(array, n) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.returnLastElementsOfArray = function(array, n) {
-    // TODO
+
+    let arrayRecortado = [];
+
+    for(let i=0; i<array.length; i++) {
+        if(i >= n ) {
+            arrayRecortado.push(array[i])
+        }
+    }
+
+    return arrayRecortado;
+
 }
+
+/*let result = arrays.returnLastElementsOfArray(['a','b','c','d'], 2);
+expect(result)
+    .toEqual(['c','d']);*/
 
 /**
  * Return n elements from an array starting from given position

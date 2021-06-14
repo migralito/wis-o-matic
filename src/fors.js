@@ -28,7 +28,9 @@ exports.print1To20 = function(console) {
  * 2 minutes
  */
 exports.print20To1 = function(console) {
-    // TODO
+    for (let i = 20; i > 0;i--) {
+        console.log(i)
+    }
 }
 
 /**
@@ -50,7 +52,9 @@ exports.print20To1 = function(console) {
  * 5 minutes
  */
 exports.print1To28Step3 = function(console) {
-    // TODO
+    for (let i = 1; i < 29;i += 3) {
+        console.log(i)
+    }
 }
 
 /**
@@ -72,5 +76,8 @@ exports.print1To28Step3 = function(console) {
  * 5 minutes
  */
 exports.printFrom30To6Step3Descending = function(console) {
-    // TODO
+    for (let i = 30; i > 5;i -= 4) {
+        console.log(i)
+    }
 }
+
