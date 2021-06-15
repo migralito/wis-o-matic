@@ -10,7 +10,33 @@
  * ```
  *
  * ### Resources to use
- * - for statement (or for...of)
+ * - for...of statement
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 2 minutes
+ *
+ * ### Help - External resources (documentation)
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+ */
+exports.printArrayElementsUsingForOf = function (array, console) {
+    for (const arrayElement of array) {
+        console.log(arrayElement)
+    }
+}
+
+/**
+ * Print to console the elements of an array
+ *
+ * ### Expected behavior
+ * ```
+ * console.log(arrary[0]);
+ * console.log(arrary[1]);
+ * ...
+ * console.log(arrary[n-1]);
+ * ```
+ *
+ * ### Resources to use
+ * - traditional for statement (for(...;...;...))
  * - array access
  *
  * ### Estimated amount of time needed to complete the task
@@ -19,13 +45,9 @@
  * ### Help - External resources (documentation)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
-exports.printArrayElements = function (array, console) {
-    for (const arrayElement of array) {
-        console.log(arrayElement)
-    }
+exports.printArrayElementsUsingTraditionalFor = function (array, console) {
+    // TODO - use `for (...; ...; ...)`
 }
-
-
 
 /**
  * Print to console the elements of an array in reverse order
@@ -49,12 +71,12 @@ exports.printArrayElements = function (array, console) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.printArrayElementsReverseOrder = function (array, console) {
-    for (let i = array.length - 1; i>-1; i--) {
+    // TODO: FYI, you can also do i>=0
+    //  (let i = array.length - 1; i>-1; i--) {
+    for (let i = array.length - 1; i>=0; i--) {
         console.log(array[i])
     }
 }
-
-
 
 /**
  * Return first n elements of an array
@@ -82,6 +104,7 @@ exports.returnFirstElementsOfArray = function(array, n) {
     for (const arrayRecortadoElement of array) {
         arrayRecortado.push(arrayRecortadoElement)
 
+        // TODO always better to do === instead of ==
         if(arrayRecortado.length == n) {
             return arrayRecortado;
         }
@@ -112,16 +135,19 @@ exports.returnLastElementsOfArray = function(array, n) {
 
     let arrayRecortado = [];
 
-    for(let i=0; i<array.length; i++) {
-        if(i >= n ) {
-            arrayRecortado.push(array[i])
-        }
-    }
+    // TODO: This is very clever, but there's a better way to do this. With your solution, you managed to skip the first
+    //  n iterations. Can you think of a way to start from the nth element instead of skipping the first ones?
+    // for(let i=0; i<array.length; i++) {
+    //     if(i >= n ) {
+    //         arrayRecortado.push(array[i])
+    //     }
+    // }
 
     return arrayRecortado;
 
 }
 
+// TODO please remove this
 /*let result = arrays.returnLastElementsOfArray(['a','b','c','d'], 2);
 expect(result)
     .toEqual(['c','d']);*/

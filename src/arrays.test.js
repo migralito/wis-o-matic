@@ -11,9 +11,16 @@ function newConsole() {
 
 describe('arrays module testing', function() {
 
-    test('printArrayElements', function() {
+    test('printArrayElementsUsingForOf', function() {
         const console = newConsole();
-        arrays.printArrayElements(['a','b','c','d','e'], console);
+        arrays.printArrayElementsUsingForOf(['a','b','c','d','e'], console);
+        expect(console.arr)
+            .toEqual(['a','b','c','d','e']);
+    });
+
+    test('printArrayElementsUsingTraditionalFor', function() {
+        const console = newConsole();
+        arrays.printArrayElementsUsingTraditionalFor(['a','b','c','d','e'], console);
         expect(console.arr)
             .toEqual(['a','b','c','d','e']);
     });

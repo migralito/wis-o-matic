@@ -3,10 +3,12 @@
  * (ie: console.log(1), console.log(2), console.log(3))
  */
 exports.print1To20 = function(console) {
-    for (let i = 1; i < 21;i++) {
+    // TODO: FYI you can also do i<=20
+    //  (let i = 1; i <  21; i++) {
+    for (let i = 1; i <= 20; i++) {
         console.log(i)
     }
-
+    // TODO: remove this comment
     // return console.arr;  <== not necessary
 };
 
@@ -28,7 +30,9 @@ exports.print1To20 = function(console) {
  * 2 minutes
  */
 exports.print20To1 = function(console) {
-    for (let i = 20; i > 0;i--) {
+    // TODO: FYI: you can also do i>=1
+    //  (let i = 20; i >  0; i--) {
+    for (let i = 20; i >= 1; i--) {
         console.log(i)
     }
 }
@@ -52,7 +56,9 @@ exports.print20To1 = function(console) {
  * 5 minutes
  */
 exports.print1To28Step3 = function(console) {
-    for (let i = 1; i < 29;i += 3) {
+    // TODO: FYI, you can also do <=28
+    //  (let i = 1; i < 29;i += 3) {
+    for (let i = 1; i <=28;i += 3) {
         console.log(i)
     }
 }
