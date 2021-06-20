@@ -46,8 +46,11 @@ exports.printArrayElementsUsingForOf = function (array, console) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.printArrayElementsUsingTraditionalFor = function (array, console) {
-    // TODO - use `for (...; ...; ...)`
+    for (let i =  0 ; i < array.length; i++) {
+        console.log(array[i])
+    }
 }
+
 
 /**
  * Print to console the elements of an array in reverse order
@@ -143,9 +146,17 @@ exports.returnLastElementsOfArray = function(array, n) {
     //     }
     // }
 
+    for(let i=n; i<array.length; i++) {
+        arrayRecortado.push(array[i])
+     }
+
+
     return arrayRecortado;
 
 }
+
+
+
 
 // TODO please remove this
 /*let result = arrays.returnLastElementsOfArray(['a','b','c','d'], 2);
@@ -172,9 +183,18 @@ expect(result)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.returnFollowingElementsFromArray = function(array, first, quantity) {
-    // TODO
-}
 
+    let newArray = [];
+
+    for(let i= first -1; i< array.length; i++) {
+        if (newArray.length < quantity ) {
+            newArray.push(array[i])
+        }
+    }
+
+    return newArray
+
+}
 /**
  * Return the n previous elements from an array starting from given position
  *
@@ -195,7 +215,17 @@ exports.returnFollowingElementsFromArray = function(array, first, quantity) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.returnPreviousElementsFromArray = function(array, first, quantity) {
-    // TODO
+
+    let newAray = [];
+
+    for (let i = first -quantity; i < array.length; i++) {
+
+        if(newAray.length < quantity) {
+            newAray.push(array[i])
+        }
+    }
+
+    return newAray;
 }
 
 /**
@@ -218,5 +248,12 @@ exports.returnPreviousElementsFromArray = function(array, first, quantity) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.returnPreviousElementsFromArrayInReverseOrder = function(array, first, quantity) {
-    // TODO
+        let newArray = []
+
+        for (let i = first-1 ; i > quantity ; i-- ) {
+                     newArray.push(array[i])
+        }
+
+        return newArray;
+
 }

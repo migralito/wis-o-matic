@@ -9,7 +9,7 @@ exports.print1To20 = function(console) {
         console.log(i)
     }
     // TODO: remove this comment
-    // return console.arr;  <== not necessary
+
 };
 
 /**
