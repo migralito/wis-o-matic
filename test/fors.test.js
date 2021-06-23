@@ -1,4 +1,4 @@
-const fors = require('./fors');
+const fors = require('../src/fors');
 
 describe('fors module testing', function () {
     test('print1To20', () => {
@@ -37,14 +37,14 @@ describe('fors module testing', function () {
             .toEqual([1,4,7,10,13,16,19,22,25,28]);
     });
 
-    test('printFrom30To6Step3Descending', () => {
+    test('printFrom30To6Step4Descending', () => {
         const console = {
             arr: [],
             log: function (msg) {
                 this.arr.push(msg);
             },
         }
-        fors.printFrom30To6Step3Descending(console);
+        fors.printFrom30To6Step4Descending(console);
         expect(console.arr)
             .toEqual([30,26,22,18,14,10,6]);
     });

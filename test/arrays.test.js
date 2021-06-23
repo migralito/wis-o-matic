@@ -1,4 +1,4 @@
-const arrays = require('./arrays');
+const arrays = require('../src/arrays');
 
 function newConsole() {
     return {
@@ -51,7 +51,7 @@ describe('arrays module testing', function() {
     });
 
     test('returnPreviousElementsFromArray', function() {
-        let result = arrays.returnPreviousElementsFromArray (['a','b','c','d','e','f','g'], 5, 2);
+        let result = arrays.returnPreviousElementsFromArray(['a','b','c','d','e','f','g'], 5, 2);
         expect(result)
             .toEqual(['d','e']);
     });

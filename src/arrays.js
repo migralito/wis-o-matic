@@ -51,7 +51,6 @@ exports.printArrayElementsUsingTraditionalFor = function (array, console) {
     }
 }
 
-
 /**
  * Print to console the elements of an array in reverse order
  *
@@ -138,25 +137,17 @@ exports.returnLastElementsOfArray = function(array, n) {
 
     let arrayRecortado = [];
 
-    // TODO: This is very clever, but there's a better way to do this. With your solution, you managed to skip the first
-    //  n iterations. Can you think of a way to start from the nth element instead of skipping the first ones?
     // for(let i=0; i<array.length; i++) {
     //     if(i >= n ) {
     //         arrayRecortado.push(array[i])
     //     }
     // }
-
     for(let i=n; i<array.length; i++) {
         arrayRecortado.push(array[i])
-     }
-
+    }
 
     return arrayRecortado;
-
 }
-
-
-
 
 // TODO please remove this
 /*let result = arrays.returnLastElementsOfArray(['a','b','c','d'], 2);
@@ -183,17 +174,17 @@ expect(result)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.returnFollowingElementsFromArray = function(array, first, quantity) {
-
     let newArray = [];
 
-    for(let i= first -1; i< array.length; i++) {
-        if (newArray.length < quantity ) {
-            newArray.push(array[i])
-        }
-    }
+    // TODO Once you get to the expected quantity, you managed to skip the following iterations. It's clever, but
+    //  suboptimal. Can you think of a way to make the `for` iterate the exact number of times?
+    // for(let i= first -1; i< array.length; i++) {
+    //     if (newArray.length < quantity ) {
+    //         newArray.push(array[i])
+    //     }
+    // }
 
     return newArray
-
 }
 /**
  * Return the n previous elements from an array starting from given position
@@ -215,17 +206,17 @@ exports.returnFollowingElementsFromArray = function(array, first, quantity) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.returnPreviousElementsFromArray = function(array, first, quantity) {
+    let newArray = [];
 
-    let newAray = [];
+    // TODO Once you get to the expected quantity, you managed to skip the following iterations. It's clever, but
+    //  suboptimal. Can you think of a way to make the `for` iterate the exact number of times?
+    // for (let i = first -quantity; i < array.length; i++) {
+    //     if(newArray.length < quantity) {
+    //         newArray.push(array[i])
+    //     }
+    // }
 
-    for (let i = first -quantity; i < array.length; i++) {
-
-        if(newAray.length < quantity) {
-            newAray.push(array[i])
-        }
-    }
-
-    return newAray;
+    return newArray;
 }
 
 /**
@@ -248,12 +239,11 @@ exports.returnPreviousElementsFromArray = function(array, first, quantity) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.returnPreviousElementsFromArrayInReverseOrder = function(array, first, quantity) {
-        let newArray = []
+    let newArray = []
 
-        for (let i = first-1 ; i > quantity ; i-- ) {
-                     newArray.push(array[i])
-        }
+    for (let i = first-1 ; i > quantity ; i-- ) {
+        newArray.push(array[i])
+    }
 
-        return newArray;
-
+    return newArray;
 }
