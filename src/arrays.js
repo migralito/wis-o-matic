@@ -107,7 +107,7 @@ exports.returnFirstElementsOfArray = function(array, n) {
         arrayRecortado.push(arrayRecortadoElement)
 
         // TODO always better to do === instead of ==
-        if(arrayRecortado.length == n) {
+        if(arrayRecortado.length === n) {
             return arrayRecortado;
         }
     }
@@ -149,10 +149,6 @@ exports.returnLastElementsOfArray = function(array, n) {
     return arrayRecortado;
 }
 
-// TODO please remove this
-/*let result = arrays.returnLastElementsOfArray(['a','b','c','d'], 2);
-expect(result)
-    .toEqual(['c','d']);*/
 
 /**
  * Return n elements from an array starting from given position
@@ -184,8 +180,15 @@ exports.returnFollowingElementsFromArray = function(array, first, quantity) {
     //     }
     // }
 
+    for(let i= 0; i< quantity; i++) {
+        newArray.push(array[(first-1)+i])
+    }
+
     return newArray
+
+
 }
+
 /**
  * Return the n previous elements from an array starting from given position
  *
@@ -216,8 +219,13 @@ exports.returnPreviousElementsFromArray = function(array, first, quantity) {
     //     }
     // }
 
+    for (let i= 0; i < quantity; i++) {
+        newArray.push(array[(first -quantity)+i])
+    }
+
     return newArray;
 }
+
 
 /**
  * Return the n previous elements from an array starting from given position, in reverse order

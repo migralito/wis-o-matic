@@ -79,9 +79,11 @@ exports.print1To28Step3 = function(console) {
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
  */
-exports.printFrom30To6Step3Descending = function(console) {
+exports.printFrom30To6Step4Descending = function(console) {
     for (let i = 30; i > 5;i -= 4) {
         console.log(i)
     }
 }
+
+
 
