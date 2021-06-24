@@ -22,7 +22,7 @@ exports.print1To20 = function(console) {
  * ```
  *
  * ### Resources to use
- * - only for statment
+ * - only for statement
  *
  * ### Estimated amount of time needed to complete the task
  * 2 minutes
@@ -48,7 +48,7 @@ exports.print20To1 = function(console) {
  * ```
  *
  * ### Resources to use
- * - only for statment
+ * - only for statement
  *
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
@@ -74,7 +74,7 @@ exports.print1To28Step3 = function(console) {
  * ```
  *
  * ### Resources to use
- * - only for statment
+ * - only for statement
  *
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
@@ -85,5 +85,63 @@ exports.printFrom30To6Step4Descending = function(console) {
     }
 }
 
+/**
+ * Print to console the multiplication table from 1 to 9.
+ *
+ * ### Expected behavior
+ * ```
+ * console.log(1);  // 1x1
+ * console.log(2);  // 1x2
+ * ...
+ * console.log(9);  // 1x9
+ * console.log(2);  // 2x1
+ * console.log(4);  // 2x2
+ * ...
+ * console.log(18); // 2x9
+ * console.log(3);  // 3x1
+ * console.log(6);  // 3x2
+ * ...
+ * console.log(27); // 3x9
+ * ...
+ * console.log(72); // 9x8
+ * console.log(81); // 9x9
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 5 to 15 minutes
+ */
+exports.printMultiplicationTable = function(console) {
+    // TODO
+}
 
-
+/**
+ * Return the factorial of a number, but stopping when calculation reaches a number above 1 million.
+ *
+ * ### Expected behavior
+ * ```
+ * calculateFactorialUpToOneMillion(1) = 1
+ * calculateFactorialUpToOneMillion(2) = 2
+ * calculateFactorialUpToOneMillion(3) = 6
+ * calculateFactorialUpToOneMillion(4) = 24
+ * calculateFactorialUpToOneMillion(5) = 120
+ * calculateFactorialUpToOneMillion(6) = 729
+ * calculateFactorialUpToOneMillion(7) = 5040
+ * calculateFactorialUpToOneMillion(8) = 40320
+ * calculateFactorialUpToOneMillion(9) = 362880
+ * calculateFactorialUpToOneMillion(10) = 1814400 // the real value is   3.628.800
+ * calculateFactorialUpToOneMillion(11) = 1663200 // the real value is  39.916.800
+ * calculateFactorialUpToOneMillion(12) = 3991680 // the real value is 479.001.600
+ * ```
+ *
+ * ### Resources to use
+ * - for or while statement
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 5 to 15 minutes
+ */
+exports.calculateFactorialUpToOneMillion = function(number) {
+    // TODO
+}
