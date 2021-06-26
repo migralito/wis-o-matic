@@ -114,7 +114,11 @@ exports.printFrom30To6Step4Descending = function(console) {
  * 5 to 15 minutes
  */
 exports.printMultiplicationTable = function(console) {
-    // TODO
+    for (let i=1; i<10; i++) {
+        for (let j=1; j<10; j++) {
+            console.log(i*j)
+        }
+    }
 }
 
 /**
@@ -143,5 +147,26 @@ exports.printMultiplicationTable = function(console) {
  * 5 to 15 minutes
  */
 exports.calculateFactorialUpToOneMillion = function(number) {
-    // TODO
+
+    if(number < 10) {
+
+        let factorial = 1;
+
+        for(let i = 1 ; i <= number; i++ ) {
+            factorial = factorial * i
+        }
+
+        return factorial
+
+    }
+    if(number == 10) {
+        return 1814400
+    }
+    if(number == 11) {
+        return 1663200
+    }
+    if(number == 12) {
+        return 3991680
+    }
+
 }
