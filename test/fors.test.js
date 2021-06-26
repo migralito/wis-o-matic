@@ -55,18 +55,44 @@ describe('fors module testing', function () {
             ]);
     });
 
-    test('calculateFactorialUpToOneMillion', () => {
-        expect(fors.calculateFactorialUpToOneMillion(1)).toEqual(1);
-        expect(fors.calculateFactorialUpToOneMillion(2)).toEqual(2);
-        expect(fors.calculateFactorialUpToOneMillion(3)).toEqual(6);
-        expect(fors.calculateFactorialUpToOneMillion(4)).toEqual(24);
-        expect(fors.calculateFactorialUpToOneMillion(5)).toEqual(120);
-        expect(fors.calculateFactorialUpToOneMillion(6)).toEqual(720);
-        expect(fors.calculateFactorialUpToOneMillion(7)).toEqual(5040);
-        expect(fors.calculateFactorialUpToOneMillion(8)).toEqual(40320);
-        expect(fors.calculateFactorialUpToOneMillion(9)).toEqual(362880);
-        expect(fors.calculateFactorialUpToOneMillion(10)).toEqual(1814400);
-        expect(fors.calculateFactorialUpToOneMillion(11)).toEqual(1663200);
-        expect(fors.calculateFactorialUpToOneMillion(12)).toEqual(3991680);
+    test('calculateFactorialUpToBoundary', () => {
+        expect(fors.calculateFactorialUpToBoundary(1,  1000000)).toEqual(1);
+        expect(fors.calculateFactorialUpToBoundary(2,  1000000)).toEqual(2);
+        expect(fors.calculateFactorialUpToBoundary(3,  1000000)).toEqual(6);
+        expect(fors.calculateFactorialUpToBoundary(4,  1000000)).toEqual(24);
+        expect(fors.calculateFactorialUpToBoundary(5,  1000000)).toEqual(120);
+        expect(fors.calculateFactorialUpToBoundary(6,  1000000)).toEqual(720);
+        expect(fors.calculateFactorialUpToBoundary(7,  1000000)).toEqual(5040);
+        expect(fors.calculateFactorialUpToBoundary(8,  1000000)).toEqual(40320);
+        expect(fors.calculateFactorialUpToBoundary(9,  1000000)).toEqual(362880);
+        expect(fors.calculateFactorialUpToBoundary(10, 1000000)).toEqual(1814400);
+        expect(fors.calculateFactorialUpToBoundary(11, 1000000)).toEqual(1663200);
+        expect(fors.calculateFactorialUpToBoundary(12, 1000000)).toEqual(3991680);
+
+        let boundary = Math.random() * 100000;
+        function expectedWeirdFactorial(n, aux = 1) {
+            if (n <= 1) {
+                let prev = aux;
+                for (let i=2; aux >= boundary; i++) {
+                    prev = aux;
+                    aux = aux / i;
+                }
+                return prev;
+            } else {
+                return expectedWeirdFactorial(n-1, aux*n);
+            }
+        }
+        expect(fors.calculateFactorialUpToBoundary(1,  boundary)).toEqual(expectedWeirdFactorial(1));
+        expect(fors.calculateFactorialUpToBoundary(2,  boundary)).toEqual(expectedWeirdFactorial(2));
+        expect(fors.calculateFactorialUpToBoundary(3,  boundary)).toEqual(expectedWeirdFactorial(3));
+        expect(fors.calculateFactorialUpToBoundary(4,  boundary)).toEqual(expectedWeirdFactorial(4));
+        expect(fors.calculateFactorialUpToBoundary(5,  boundary)).toEqual(expectedWeirdFactorial(5));
+        expect(fors.calculateFactorialUpToBoundary(6,  boundary)).toEqual(expectedWeirdFactorial(6));
+        expect(fors.calculateFactorialUpToBoundary(7,  boundary)).toEqual(expectedWeirdFactorial(7));
+        expect(fors.calculateFactorialUpToBoundary(8,  boundary)).toEqual(expectedWeirdFactorial(8));
+        expect(fors.calculateFactorialUpToBoundary(9,  boundary)).toEqual(expectedWeirdFactorial(9));
+        expect(fors.calculateFactorialUpToBoundary(10, boundary)).toEqual(expectedWeirdFactorial(10));
+        expect(fors.calculateFactorialUpToBoundary(11, boundary)).toEqual(expectedWeirdFactorial(11));
+        expect(fors.calculateFactorialUpToBoundary(12, boundary)).toEqual(expectedWeirdFactorial(12));
     });
 });

@@ -122,22 +122,22 @@ exports.printMultiplicationTable = function(console) {
 }
 
 /**
- * Return the factorial of a number, but stopping when calculation reaches a number above 1 million.
+ * Return the factorial of a number, but stopping when calculation reaches a given boundary.
  *
  * ### Expected behavior
  * ```
- * calculateFactorialUpToOneMillion(1) = 1
- * calculateFactorialUpToOneMillion(2) = 2
- * calculateFactorialUpToOneMillion(3) = 6
- * calculateFactorialUpToOneMillion(4) = 24
- * calculateFactorialUpToOneMillion(5) = 120
- * calculateFactorialUpToOneMillion(6) = 729
- * calculateFactorialUpToOneMillion(7) = 5040
- * calculateFactorialUpToOneMillion(8) = 40320
- * calculateFactorialUpToOneMillion(9) = 362880
- * calculateFactorialUpToOneMillion(10) = 1814400 // the real value is   3.628.800
- * calculateFactorialUpToOneMillion(11) = 1663200 // the real value is  39.916.800
- * calculateFactorialUpToOneMillion(12) = 3991680 // the real value is 479.001.600
+ * calculateFactorialUpToOneMillion(1, 1000000) = 1
+ * calculateFactorialUpToOneMillion(2, 1000000) = 2
+ * calculateFactorialUpToOneMillion(3, 1000000) = 6
+ * calculateFactorialUpToOneMillion(4, 1000000) = 24
+ * calculateFactorialUpToOneMillion(5, 1000000) = 120
+ * calculateFactorialUpToOneMillion(6, 1000000) = 729
+ * calculateFactorialUpToOneMillion(7, 1000000) = 5040
+ * calculateFactorialUpToOneMillion(8, 1000000) = 40320
+ * calculateFactorialUpToOneMillion(9, 1000000) = 362880
+ * calculateFactorialUpToOneMillion(10, 1000000) = 1814400 // the real value is   3.628.800
+ * calculateFactorialUpToOneMillion(11, 1000000) = 1663200 // the real value is  39.916.800
+ * calculateFactorialUpToOneMillion(12, 1000000) = 3991680 // the real value is 479.001.600
  * ```
  *
  * ### Resources to use
@@ -146,27 +146,6 @@ exports.printMultiplicationTable = function(console) {
  * ### Estimated amount of time needed to complete the task
  * 5 to 15 minutes
  */
-exports.calculateFactorialUpToOneMillion = function(number) {
-
-    if(number < 10) {
-
-        let factorial = 1;
-
-        for(let i = 1 ; i <= number; i++ ) {
-            factorial = factorial * i
-        }
-
-        return factorial
-
-    }
-    if(number == 10) {
-        return 1814400
-    }
-    if(number == 11) {
-        return 1663200
-    }
-    if(number == 12) {
-        return 3991680
-    }
-
+exports.calculateFactorialUpToBoundary = function(number, boundary) {
+    // TODO
 }
