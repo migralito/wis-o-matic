@@ -185,5 +185,8 @@ exports.calculateFactorialUpToBoundary = function(number, boundary) {
  * 5 minutes
  */
 exports.incrementalCountdown = function(start, end, console) {
-    // TODO
+    for (let i =1; end < start; i++) {
+        console.log(start)
+        start = start - i
+    }
 }
