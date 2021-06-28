@@ -95,4 +95,11 @@ describe('fors module testing', function () {
         expect(fors.calculateFactorialUpToBoundary(11, boundary)).toEqual(expectedWeirdFactorial(11));
         expect(fors.calculateFactorialUpToBoundary(12, boundary)).toEqual(expectedWeirdFactorial(12));
     });
+
+    test('incrementalCountdown', () => {
+        const console = new Console();
+        fors.incrementalCountdown(78, 39, console);
+        expect(console.arr)
+            .toEqual([78, 77, 75, 72, 68, 63, 57, 50, 42]);
+    });
 });

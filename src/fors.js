@@ -158,5 +158,32 @@ exports.calculateFactorialUpToBoundary = function(number, boundary) {
     }
 
     return factorial
+}
 
+/**
+ * Print to console a countdown starting from {start} but with growing decreasing.
+ *
+ * ### Expected behavior
+ * incrementalCountdown(78, 39, console)
+ * ```
+ * console.log(78);
+ * console.log(77); // previous - 1
+ * console.log(75); // previous - 2
+ * console.log(72); // previous - 3
+ * console.log(68); // previous - 4
+ * console.log(63); // previous - 5
+ * console.log(57); // previous - 6
+ * console.log(50); // previous - 7
+ * console.log(42); // previous - 8
+ * // next iteration is 33, which is lower that 39, so we stop here
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 5 minutes
+ */
+exports.incrementalCountdown = function(start, end, console) {
+    // TODO
 }
