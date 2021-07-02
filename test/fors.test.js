@@ -9,6 +9,15 @@ function Console() {
     };
 }
 
+function Plotter() {
+    return {
+        arr: [],
+        plot: function (x,y) {
+            this.arr.push([x,y]);
+        },
+    };
+}
+
 describe('fors module testing', function () {
     test('print1To20', () => {
         const console = new Console();
@@ -101,5 +110,18 @@ describe('fors module testing', function () {
         fors.incrementalCountdown(78, 39, console);
         expect(console.arr)
             .toEqual([78, 77, 75, 72, 68, 63, 57, 50, 42]);
+    });
+
+    test('sawtooth', () => {
+        const plotter = new Plotter();
+        fors.sawtooth(30, 7, plotter);
+        expect(plotter.arr)
+            .toEqual([
+                [0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6],
+                [7, 0], [8, 1], [9, 2], [10,3], [11,4], [12,5], [13,6],
+                [14,0], [15,1], [16,2], [17,3], [18,4], [19,5], [20,6],
+                [21,0], [22,1], [23,2], [24,3], [25,4], [26,5], [27,6],
+                [28,0], [29,1],
+            ]);
     });
 });

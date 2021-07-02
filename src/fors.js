@@ -190,3 +190,44 @@ exports.incrementalCountdown = function(start, end, console) {
         start = start - i
     }
 }
+
+/**
+ * Print to the plotter points forming a sawtooth, using length and height as parameters.
+ * Plotter exposes the method plot(x,y).
+ *
+ * ### Expected behavior
+ * sawtooth(22, 4, plotter)
+ * ```
+ * plotter.plot(0, 0);
+ * plotter.plot(1, 1);
+ * plotter.plot(2, 2);
+ * plotter.plot(3, 3);
+ * plotter.plot(4, 0);
+ * plotter.plot(5, 1);
+ * plotter.plot(6, 2);
+ * plotter.plot(7, 3);
+ * plotter.plot(8, 0);
+ * plotter.plot(9, 1);
+ * plotter.plot(10, 2);
+ * plotter.plot(11, 3);
+ * plotter.plot(12, 0);
+ * plotter.plot(13, 1);
+ * plotter.plot(14, 2);
+ * plotter.plot(15, 3);
+ * plotter.plot(16, 0);
+ * plotter.plot(17, 1);
+ * plotter.plot(18, 2);
+ * plotter.plot(19, 3);
+ * plotter.plot(20, 0);
+ * plotter.plot(21, 1);
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 10 minutes
+ */
+exports.sawtooth = function(length, height, plotter) {
+    // TODO
+}
