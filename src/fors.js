@@ -230,4 +230,76 @@ exports.incrementalCountdown = function(start, end, console) {
  */
 exports.sawtooth = function(length, height, plotter) {
     // TODO
+};
+
+/**
+ * Your mission is to calculate how many vaccines a building needs.
+ * - building.floors: number of floors of the building
+ * - building.rooms: number of rooms per floor
+ * - building.vaccinesNeeded(f, r): number of people that need vaccines in the room r of floor f
+ *
+ * ### Expected behavior
+ * In a basic example of a building with 4 floors, 5 rooms in each floor (with a total of 20 rooms),
+ * and 2 people that need vaccination in every room of the building, then we need 40 vaccines.
+ * ```
+ * const building = {
+ *     floors: 4,
+ *     rooms: 5,
+ *     vaccinesNeeded: (f, r) => 2,    // f between [0,3]  &  r between [0,4]
+ * };
+ * console.log(vaccinateBuilding(building));
+ *   >> outputs: 40
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 10 minutes
+ */
+exports.vaccinateBuilding = function(building) {
+    // TODO
+}
+
+/**
+ * Print pairing combinations available for n elements.
+ *
+ * ### Expected behavior
+ * pairCombinations(3):
+ * ```
+ * console.log('12');
+ * console.log('13');
+ * console.log('23');
+ * ```
+ * pairCombinations(4):
+ * ```
+ * console.log('12');
+ * console.log('13');
+ * console.log('14');
+ * console.log('23');
+ * console.log('24');
+ * console.log('34');
+ * ```
+ * pairCombinations(5):
+ * ```
+ * console.log('12');
+ * console.log('13');
+ * console.log('14');
+ * console.log('15');
+ * console.log('23');
+ * console.log('24');
+ * console.log('25');
+ * console.log('34');
+ * console.log('35');
+ * console.log('45');
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 10 minutes
+ */
+exports.pairCombinations = function(elements, console) {
+    // TODO
 }
