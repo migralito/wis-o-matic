@@ -303,3 +303,65 @@ exports.vaccinateBuilding = function(building) {
 exports.pairCombinations = function(elements, console) {
     // TODO
 }
+
+/**
+ * Print to plotter a right triangle, where:
+ * - its right angle lies in coordinates (0;0)
+ * - its legs lies onto the x and y axes
+ * - its legs are the size specified as first argument of the function call
+ *
+ * ### Expected behavior
+ * plotTriangle(3, plotter)
+ * ```
+ * plotter.plot(0, 0);
+ * plotter.plot(0, 1);
+ * plotter.plot(0, 2);
+ * plotter.plot(1, 0);
+ * plotter.plot(1, 1);
+ * plotter.plot(2, 0);
+ * ```
+ * The calls to .plot(x,y) can be done in any order. The important thing is to plot all corresponding points.
+ *
+ * ### Resources to use
+ * - for statement
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 5 minutes
+ */
+exports.plotTriangle = function(size, plotter) {
+    // TODO
+}
+
+/**
+ * Print to plotter a trirectangular tetrahedron, where:
+ * - its right angle lies in coordinates (0;0;0)
+ * - its legs lies onto the x, y, and z axes
+ * - its legs are the size specified as first argument of the function call
+ *
+ * ### Expected behavior
+ * plotTetrahedron(3, plotter)
+ * ```
+ * plotter.plot(0, 0, 0);
+ * plotter.plot(0, 1, 0);
+ * plotter.plot(0, 2, 0);
+ * plotter.plot(1, 0, 0);
+ * plotter.plot(1, 1, 0);
+ * plotter.plot(2, 0, 0);
+ *
+ * plotter.plot(0, 0, 1);
+ * plotter.plot(0, 1, 1);
+ * plotter.plot(1, 0, 1);
+ *
+ * plotter.plot(0, 0, 2);
+ * ```
+ * The calls to .plot(x,y,z) can be done in any order. The important thing is to plot all corresponding points.
+ *
+ * ### Resources to use
+ * - for statement
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 5 minutes
+ */
+exports.plotTetrahedron = function(size, plotter) {
+    // TODO
+}
