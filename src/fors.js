@@ -364,4 +364,30 @@ exports.plotTriangle = function(size, plotter) {
  */
 exports.plotTetrahedron = function(size, plotter) {
     // TODO
-}
+};
+
+/**
+ * A Fibonacci sequence is a sequence of numbers where a number is the sum of the two previous numbers in the sequence.
+ * It starts with 0, 1, 1, 2, 3, 5, 8, 13 and so on. Write a function called fibonacci(n), where n is the zero based
+ * index of the sequence, that calculates the nth term in the sequence.
+ *
+ * ### Expected behavior
+ * fibonacci(0) = 0
+ * fibonacci(1) = 1
+ * fibonacci(2) = 1
+ * fibonacci(3) = 2
+ * fibonacci(4) = 3
+ * fibonacci(5) = 5
+ * fibonacci(6) = 8
+ * ...
+ * fibonacci(100) = 354224848179262000000
+ *
+ * ### Resources to use
+ * - for statement
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 5 minutes
+ */
+exports.fibonacci = function(n) {
+    // TODO
+};

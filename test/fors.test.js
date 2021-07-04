@@ -208,4 +208,19 @@ describe('fors module testing', function () {
             [0,0,4],
         ].sort());
     });
+
+    test('fibonacci', () => {
+        expect(fors.fibonacci(0)).toEqual(0);
+        expect(fors.fibonacci(1)).toEqual(1);
+        expect(fors.fibonacci(2)).toEqual(1);
+        expect(fors.fibonacci(3)).toEqual(2);
+        expect(fors.fibonacci(4)).toEqual(3);
+        expect(fors.fibonacci(5)).toEqual(5);
+        expect(fors.fibonacci(6)).toEqual(8);
+        expect(fors.fibonacci(7)).toEqual(13);
+        expect(fors.fibonacci(8)).toEqual(21);
+        expect(fors.fibonacci(98)).toEqual(135301852344706760000);
+        expect(fors.fibonacci(99)).toEqual(218922995834555200000);
+        expect(fors.fibonacci(100)).toEqual(354224848179262000000);
+    });
 });

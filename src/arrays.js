@@ -137,6 +137,7 @@ exports.returnLastElementsOfArray = function(array, n) {
 
     let arrayRecortado = [];
 
+    // TODO remove comment
     // for(let i=0; i<array.length; i++) {
     //     if(i >= n ) {
     //         arrayRecortado.push(array[i])
@@ -172,7 +173,10 @@ exports.returnLastElementsOfArray = function(array, n) {
 exports.returnFollowingElementsFromArray = function(array, first, quantity) {
     let newArray = [];
 
-    // TODO Once you get to the expected quantity, you managed to skip the following iterations. It's clever, but
+    // TODO
+    //  Remove this comment (including code))
+    //
+    //  Once you get to the expected quantity, you managed to skip the following iterations. It's clever, but
     //  suboptimal. Can you think of a way to make the `for` iterate the exact number of times?
     // for(let i= first -1; i< array.length; i++) {
     //     if (newArray.length < quantity ) {
@@ -211,7 +215,10 @@ exports.returnFollowingElementsFromArray = function(array, first, quantity) {
 exports.returnPreviousElementsFromArray = function(array, first, quantity) {
     let newArray = [];
 
-    // TODO Once you get to the expected quantity, you managed to skip the following iterations. It's clever, but
+    // TODO
+    //  remove comment (including code)
+    //
+    //  Once you get to the expected quantity, you managed to skip the following iterations. It's clever, but
     //  suboptimal. Can you think of a way to make the `for` iterate the exact number of times?
     // for (let i = first -quantity; i < array.length; i++) {
     //     if(newArray.length < quantity) {
