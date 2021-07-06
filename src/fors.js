@@ -229,7 +229,20 @@ exports.incrementalCountdown = function(start, end, console) {
  * 10 minutes
  */
 exports.sawtooth = function(length, height, plotter) {
-    // TODO
+
+    let indexOneArray = 0;
+
+    for (let i=0; i < length; i++) {
+
+        if(indexOneArray === height) {
+            indexOneArray = 0
+        }
+
+        plotter.plot(i,indexOneArray)
+
+        indexOneArray++;
+
+    }
 };
 
 /**
@@ -257,9 +270,11 @@ exports.sawtooth = function(length, height, plotter) {
  * ### Estimated amount of time needed to complete the task
  * 10 minutes
  */
+
+/*
 exports.vaccinateBuilding = function(building) {
     // TODO
-}
+}/*
 
 /**
  * Print pairing combinations available for n elements.
@@ -300,9 +315,10 @@ exports.vaccinateBuilding = function(building) {
  * ### Estimated amount of time needed to complete the task
  * 10 minutes
  */
+/*
 exports.pairCombinations = function(elements, console) {
     // TODO
-}
+}*/
 
 /**
  * Print to plotter a right triangle, where:
@@ -328,9 +344,11 @@ exports.pairCombinations = function(elements, console) {
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
  */
+
+/*
 exports.plotTriangle = function(size, plotter) {
     // TODO
-}
+}*/
 
 /**
  * Print to plotter a trirectangular tetrahedron, where:
@@ -362,9 +380,11 @@ exports.plotTriangle = function(size, plotter) {
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
  */
+
+/*
 exports.plotTetrahedron = function(size, plotter) {
     // TODO
-};
+};*/
 
 /**
  * A Fibonacci sequence is a sequence of numbers where a number is the sum of the two previous numbers in the sequence.
@@ -388,6 +408,7 @@ exports.plotTetrahedron = function(size, plotter) {
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
  */
+/*
 exports.fibonacci = function(n) {
     // TODO
-};
+};*/
