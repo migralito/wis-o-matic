@@ -124,7 +124,8 @@ describe('fors module testing', function () {
                 [28,0], [29,1],
             ]);
     });
-/*
+
+
     test('vaccinateBuilding', () => {
         expect(fors.vaccinateBuilding({
             floors: 4,
@@ -147,6 +148,8 @@ describe('fors module testing', function () {
             vaccinesNeeded: (f,r) => f*r,
         })).toEqual(18);
     });
+
+    /*
 
     test('numbersOfCombination', () => {
         const console = new Console();

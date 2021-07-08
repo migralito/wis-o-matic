@@ -271,10 +271,20 @@ exports.sawtooth = function(length, height, plotter) {
  * 10 minutes
  */
 
-/*
+
 exports.vaccinateBuilding = function(building) {
-    // TODO
-}/*
+    
+    let vaccinesNeeded = 0;
+
+    for(let f=0; f < building.floors; f++) {                       4
+        for(let r = 0; r < building.rooms; r++) {                  5
+          vaccinesNeeded = building.vaccinesNeeded(f,r) + vaccinesNeeded;
+        }
+    }                                             
+
+    return vaccinesNeeded;
+
+}
 
 /**
  * Print pairing combinations available for n elements.
