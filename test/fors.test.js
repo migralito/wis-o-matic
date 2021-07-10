@@ -149,7 +149,7 @@ describe('fors module testing', function () {
         })).toEqual(18);
     });
 
-    /*
+   
 
     test('numbersOfCombination', () => {
         const console = new Console();
@@ -164,7 +164,7 @@ describe('fors module testing', function () {
             '78'
         ]);
     });
-
+ /*
     test('plotTriangle', () => {
         const plotter = new Plotter();
         fors.plotTriangle(13, plotter);

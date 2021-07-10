@@ -325,10 +325,17 @@ exports.vaccinateBuilding = function(building) {
  * ### Estimated amount of time needed to complete the task
  * 10 minutes
  */
-/*
+
 exports.pairCombinations = function(elements, console) {
-    // TODO
-}*/
+    for (let i=1; i<elements; i++) {       
+        for (let j=1; j<=elements; j++) {
+            if (i !== j && i<j ) {
+                console.log(`${i}${j}`)
+            }
+        }
+    }
+}
+
 
 /**
  * Print to plotter a right triangle, where:
