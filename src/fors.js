@@ -362,10 +362,10 @@ exports.pairCombinations = function(elements, console) {
  * 5 minutes
  */
 
-/*
+
 exports.plotTriangle = function(size, plotter) {
     // TODO
-}*/
+}
 
 /**
  * Print to plotter a trirectangular tetrahedron, where:
@@ -398,10 +398,10 @@ exports.plotTriangle = function(size, plotter) {
  * 5 minutes
  */
 
-/*
+
 exports.plotTetrahedron = function(size, plotter) {
     // TODO
-};*/
+};
 
 /**
  * A Fibonacci sequence is a sequence of numbers where a number is the sum of the two previous numbers in the sequence.
@@ -425,7 +425,7 @@ exports.plotTetrahedron = function(size, plotter) {
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
  */
-/*
+
 exports.fibonacci = function(n) {
     // TODO
-};*/
+};
