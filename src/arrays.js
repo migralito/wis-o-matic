@@ -262,3 +262,32 @@ exports.returnPreviousElementsFromArrayInReverseOrder = function(array, first, q
 
     return newArray;
 }
+
+/**
+ * A palindrome is text that can be read from left to right or right to left with the same result. An example is the
+ * word "madam". Note that white space, punctuation,and differences in case are not considered when determining if
+ * a word is a palindrome. Given a string, determine if the string is a palindrome or not.
+ *
+ * ### Expected behavior
+ * ```
+ * isPalindrome("Eva, Can I Stab Bats In A Cave?") => true
+ * isPalindrome("A Santa Lived As a Devil At NASA.") => true
+ * isPalindrome("race car") => true
+ * isPalindrome("raced car") => false
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ * - array access
+ * - regexes
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 15 minutes
+ */
+exports.isPalindrome = function(string) {
+    const array = string
+        .replaceAll(/[^a-zA-Z]/g, '') // this will transform "Race, CaR" into "RaceCaR"
+        .toLowerCase() // this will transform "RaceCaR" into "racecar"
+        .split(""); // this will transform "racecar" into ["r","a","c","e","c","a","r"]
+    // TODO
+};
