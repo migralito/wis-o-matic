@@ -125,7 +125,6 @@ describe('fors module testing', function () {
             ]);
     });
 
-
     test('vaccinateBuilding', () => {
         expect(fors.vaccinateBuilding({
             floors: 4,
@@ -149,9 +148,7 @@ describe('fors module testing', function () {
         })).toEqual(18);
     });
 
-   
-
-    test('numbersOfCombination', () => {
+    test('pairCombinations', () => {
         const console = new Console();
         fors.pairCombinations(8, console)
         expect(console.arr).toEqual([
@@ -164,7 +161,7 @@ describe('fors module testing', function () {
             '78'
         ]);
     });
- /*
+
     test('plotTriangle', () => {
         const plotter = new Plotter();
         fors.plotTriangle(13, plotter);
@@ -225,5 +222,5 @@ describe('fors module testing', function () {
         expect(fors.fibonacci(98)).toEqual(135301852344706760000);
         expect(fors.fibonacci(99)).toEqual(218922995834555200000);
         expect(fors.fibonacci(100)).toEqual(354224848179262000000);
-    });*/
+    });
 });

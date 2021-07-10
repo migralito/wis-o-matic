@@ -230,19 +230,36 @@ exports.incrementalCountdown = function(start, end, console) {
  */
 exports.sawtooth = function(length, height, plotter) {
 
-    let indexOneArray = 0;
-
-    for (let i=0; i < length; i++) {
-
-        if(indexOneArray === height) {
-            indexOneArray = 0
-        }
-
-        plotter.plot(i,indexOneArray)
-
-        indexOneArray++;
-
-    }
+    // let indexOneArray = 0;
+    //
+    // for (let i=0; i < length; i++) {
+    //
+    //     if(indexOneArray === height) {
+    //         indexOneArray = 0
+    //     }
+    //
+    //     plotter.plot(i,indexOneArray)
+    //
+    //     indexOneArray++;
+    //
+    // }
+    // TODO Congratulations for solving it. There's room for the following optimization:
+    //  There exists an operator call modulus, that allows to calculate the remainder of an integer division.
+    //  ie:
+    //      0 % 4 = 0
+    //      1 % 4 = 1
+    //      2 % 4 = 2
+    //      3 % 4 = 3
+    //      4 % 4 = 0
+    //      5 % 4 = 1
+    //      6 % 4 = 2
+    //      7 % 4 = 3
+    //      8 % 4 = 0
+    //      9 % 4 = 1
+    //     10 % 4 = 2
+    //     11 % 4 = 3
+    //     ...
+    //  Can you think of a way of removing indexOneArray variable by using the modulus operator?
 };
 
 /**
@@ -270,14 +287,12 @@ exports.sawtooth = function(length, height, plotter) {
  * ### Estimated amount of time needed to complete the task
  * 10 minutes
  */
-
-
 exports.vaccinateBuilding = function(building) {
     
     let vaccinesNeeded = 0;
 
-    for(let f=0; f < building.floors; f++) {                       4
-        for(let r = 0; r < building.rooms; r++) {                  5
+    for(let f=0; f < building.floors; f++) {
+        for(let r = 0; r < building.rooms; r++) {
           vaccinesNeeded = building.vaccinesNeeded(f,r) + vaccinesNeeded;
         }
     }                                             
@@ -325,17 +340,18 @@ exports.vaccinateBuilding = function(building) {
  * ### Estimated amount of time needed to complete the task
  * 10 minutes
  */
-
 exports.pairCombinations = function(elements, console) {
-    for (let i=1; i<elements; i++) {       
-        for (let j=1; j<=elements; j++) {
-            if (i !== j && i<j ) {
-                console.log(`${i}${j}`)
-            }
-        }
-    }
+    // for (let i=1; i<elements; i++) {
+    //     for (let j=1; j<=elements; j++) {
+    //         if (i !== j && i<j ) {
+    //             console.log(`${i}${j}`)
+    //         }
+    //     }
+    // }
+    // TODO Congratulations for solving the exercise! There is room for one optimization.
+    //  You are skipping the first iterations of the second for loop. Can you think of a way of doing less iterations
+    //  instead of skipping iterations by using the if statement?
 }
-
 
 /**
  * Print to plotter a right triangle, where:
@@ -361,11 +377,9 @@ exports.pairCombinations = function(elements, console) {
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
  */
-
-/*
 exports.plotTriangle = function(size, plotter) {
     // TODO
-}*/
+}
 
 /**
  * Print to plotter a trirectangular tetrahedron, where:
@@ -397,11 +411,9 @@ exports.plotTriangle = function(size, plotter) {
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
  */
-
-/*
 exports.plotTetrahedron = function(size, plotter) {
     // TODO
-};*/
+};
 
 /**
  * A Fibonacci sequence is a sequence of numbers where a number is the sum of the two previous numbers in the sequence.
@@ -425,7 +437,6 @@ exports.plotTetrahedron = function(size, plotter) {
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
  */
-/*
 exports.fibonacci = function(n) {
     // TODO
-};*/
+};
