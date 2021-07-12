@@ -241,38 +241,33 @@ exports.incrementalCountdown = function(start, end, console) {
 
 
 exports.sawtooth = function(length, height, plotter) {
-    
-    plotter.plot(0,0)
-    plotter.plot(1,1)
-    plotter.plot(2,2)
-    plotter.plot(3,3)
-    plotter.plot(4,4)
-    plotter.plot(5,5)
-    plotter.plot(6,6)
-    plotter.plot(7,0)
-    plotter.plot(8,1)
-    plotter.plot(9,2)
-    plotter.plot(10,3)
-    plotter.plot(11,4)
-    plotter.plot(12,5)
-    plotter.plot(13,6)
-    plotter.plot(14,0)
-    plotter.plot(15,1)
-    plotter.plot(16,2)
-    plotter.plot(17,3)
-    plotter.plot(18,4)
-    plotter.plot(19,5)
-    plotter.plot(20,6)
-    plotter.plot(21,0)
-    plotter.plot(22,1)
-    plotter.plot(23,2)
-    plotter.plot(24,3)
-    plotter.plot(25,4)
-    plotter.plot(26,5)
-    plotter.plot(27,6)
-    plotter.plot(28,0)
-    plotter.plot(29,1)
 
+    for (let i=0; i < length; i++) {
+
+        plotter.plot(i,i % height)
+
+        }
+   
+
+
+
+    // TODO Congratulations for solving it. There's room for the following optimization:
+    //  There exists an operator call modulus, that allows to calculate the remainder of an integer division.
+    //  ie:
+    //      0 % 4 = 0
+    //      1 % 4 = 1
+    //      2 % 4 = 2
+    //      3 % 4 = 3
+    //      4 % 4 = 0
+    //      5 % 4 = 1
+    //      6 % 4 = 2
+    //      7 % 4 = 3
+    //      8 % 4 = 0
+    //      9 % 4 = 1
+    //     10 % 4 = 2
+    //     11 % 4 = 3
+    //     ...
+    //  Can you think of a way of removing indexOneArray variable by using the modulus operator?
 };
 
 /*.toEqual([
@@ -318,7 +313,17 @@ function Plotter() {
  * 10 minutes
  */
 exports.vaccinateBuilding = function(building) {
-    // TODO
+    
+    let vaccinesNeeded = 0;
+
+    for(let f=0; f < building.floors; f++) {
+        for(let r = 0; r < building.rooms; r++) {
+          vaccinesNeeded = building.vaccinesNeeded(f,r) + vaccinesNeeded;
+        }
+    }                                             
+
+    return vaccinesNeeded;
+
 }
 
 /**
@@ -361,7 +366,11 @@ exports.vaccinateBuilding = function(building) {
  * 10 minutes
  */
 exports.pairCombinations = function(elements, console) {
-    // TODO
+     for (let i=1; i<elements; i++) {
+       for (let j=i+1; j<=elements; j++) {
+               console.log(`${i}${j}`)
+      }
+     }
 }
 
 /**
@@ -389,7 +398,11 @@ exports.pairCombinations = function(elements, console) {
  * 5 minutes
  */
 exports.plotTriangle = function(size, plotter) {
-    // TODO
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size-i; j++) {
+                plotter.plot(i, j);
+        }
+    }
 }
 
 /**

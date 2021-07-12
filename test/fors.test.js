@@ -148,7 +148,7 @@ describe('fors module testing', function () {
         })).toEqual(18);
     });
 
-    test('numbersOfCombination', () => {
+    test('pairCombinations', () => {
         const console = new Console();
         fors.pairCombinations(8, console)
         expect(console.arr).toEqual([

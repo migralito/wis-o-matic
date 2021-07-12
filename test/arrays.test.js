@@ -61,5 +61,14 @@ describe('arrays module testing', function() {
         expect(result)
             .toEqual(['e','d']);
     });
+
+    test('isPalindrome', function() {
+        expect(arrays.isPalindrome("race car")).toBeTruthy();
+        expect(arrays.isPalindrome("raced car")).toBeFalsy();
+        expect(arrays.isPalindrome("Eva, Can I Stab Bats In A Cave?")).toBeTruthy();
+        expect(arrays.isPalindrome("Eva, Can I Satb Bats In A Cave?")).toBeFalsy();
+        expect(arrays.isPalindrome("A Santa Lived As a Devil At NASA.")).toBeTruthy();
+        expect(arrays.isPalindrome("A Santa Live As a Devil At NASA.")).toBeFalsy();
+    });
 });
 
