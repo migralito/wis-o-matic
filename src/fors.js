@@ -397,10 +397,11 @@ exports.pairCombinations = function(elements, console) {
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
  */
+
 exports.plotTriangle = function(size, plotter) {
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size-i; j++) {
-                plotter.plot(i, j);
+            plotter.plot(i,j);
         }
     }
 }
@@ -436,7 +437,13 @@ exports.plotTriangle = function(size, plotter) {
  * 5 minutes
  */
 exports.plotTetrahedron = function(size, plotter) {
-    // TODO
+    for (let i = 0; i < size; i++) {  
+         for (let j = 0; j < size-i; j++) {   
+             for (let f = 0; f < size-j; f++) {   
+                plotter.plot(i,j,f)
+             }
+         }
+    }
 };
 
 /**
