@@ -377,11 +377,6 @@ exports.pairCombinations = function(elements, console) {
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
  */
-<<<<<<< HEAD
-
-
-=======
->>>>>>> c3141760133e5bdeb96cab8933490045c820a62c
 exports.plotTriangle = function(size, plotter) {
     // TODO
 }
