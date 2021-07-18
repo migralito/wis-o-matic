@@ -228,22 +228,30 @@ exports.incrementalCountdown = function(start, end, console) {
  * ### Estimated amount of time needed to complete the task
  * 10 minutes
  */
+// TODO remove this comment!!!
+/*
+ function Plotter() {
+    return {
+        arr: [],
+        plot: function (...coordinates) {
+            this.arr.push(coordinates);
+        },
+    };
+}*/
 exports.sawtooth = function(length, height, plotter) {
 
-    // let indexOneArray = 0;
+    for (let i=0; i < length; i++) {
+
+        plotter.plot(i,i % height)
+
+        }
+   
+
+
+
+    // TODO remove this comment, now that you have successfully solved it
     //
-    // for (let i=0; i < length; i++) {
-    //
-    //     if(indexOneArray === height) {
-    //         indexOneArray = 0
-    //     }
-    //
-    //     plotter.plot(i,indexOneArray)
-    //
-    //     indexOneArray++;
-    //
-    // }
-    // TODO Congratulations for solving it. There's room for the following optimization:
+    // Congratulations for solving it. There's room for the following optimization:
     //  There exists an operator call modulus, that allows to calculate the remainder of an integer division.
     //  ie:
     //      0 % 4 = 0
@@ -261,6 +269,24 @@ exports.sawtooth = function(length, height, plotter) {
     //     ...
     //  Can you think of a way of removing indexOneArray variable by using the modulus operator?
 };
+
+// TODO what's the deal with all of these comments???. Please remove
+/*.toEqual([
+    [0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6],
+    [7, 0], [8, 1], [9, 2], [10,3], [11,4], [12,5], [13,6],
+    [14,0], [15,1], [16,2], [17,3], [18,4], [19,5], [20,6],
+    [21,0], [22,1], [23,2], [24,3], [25,4], [26,5], [27,6],
+    [28,0], [29,1],
+]);
+function Plotter() {
+    return {
+        arr: [],
+        plot: function (...coordinates) {
+            this.arr.push(coordinates);
+        },
+    };
+}*/
+
 
 /**
  * Your mission is to calculate how many vaccines a building needs.
@@ -341,16 +367,11 @@ exports.vaccinateBuilding = function(building) {
  * 10 minutes
  */
 exports.pairCombinations = function(elements, console) {
-    // for (let i=1; i<elements; i++) {
-    //     for (let j=1; j<=elements; j++) {
-    //         if (i !== j && i<j ) {
-    //             console.log(`${i}${j}`)
-    //         }
-    //     }
-    // }
-    // TODO Congratulations for solving the exercise! There is room for one optimization.
-    //  You are skipping the first iterations of the second for loop. Can you think of a way of doing less iterations
-    //  instead of skipping iterations by using the if statement?
+    for (let i=1; i<elements; i++) {
+        for (let j=i+1; j<=elements; j++) {
+            console.log(`${i}${j}`)
+        }
+    }
 }
 
 /**
@@ -377,8 +398,14 @@ exports.pairCombinations = function(elements, console) {
  * ### Estimated amount of time needed to complete the task
  * 5 minutes
  */
+// TODO please don't add blank lines like this
+
 exports.plotTriangle = function(size, plotter) {
-    // TODO
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size-i; j++) {
+            plotter.plot(i,j);
+        }
+    }
 }
 
 /**
@@ -412,7 +439,13 @@ exports.plotTriangle = function(size, plotter) {
  * 5 minutes
  */
 exports.plotTetrahedron = function(size, plotter) {
-    // TODO
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size-i; j++) {
+            for (let f = 0; f < size-j; f++) {
+                plotter.plot(i,j,f)
+            }
+        }
+    }
 };
 
 /**
