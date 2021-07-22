@@ -289,5 +289,25 @@ exports.isPalindrome = function(string) {
         .replaceAll(/[^a-zA-Z]/g, '') // this will transform "Race, CaR" into "RaceCaR"
         .toLowerCase() // this will transform "RaceCaR" into "racecar"
         .split(""); // this will transform "racecar" into ["r","a","c","e","c","a","r"]
-    // TODO
+    
+
+        let newArray = [];
+
+        for (let i = array.length - 1; i >=0; i--) {
+            newArray.push(array[i])
+        }
+
+        array.join("");
+        newArray.join("")
+
+
+        console.log(array);
+        console.log(newArray);
+
+        if(array === newArray) {
+            return true;
+        } else {
+            return false
+        }
+
 };
