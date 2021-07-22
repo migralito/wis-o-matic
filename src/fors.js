@@ -441,7 +441,7 @@ exports.plotTriangle = function(size, plotter) {
 exports.plotTetrahedron = function(size, plotter) {
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size-i; j++) {
-            for (let f = 0; f < size-j; f++) {
+            for (let f = 0; f < size-j-i; f++) {
                 plotter.plot(i,j,f)
             }
         }
@@ -471,5 +471,18 @@ exports.plotTetrahedron = function(size, plotter) {
  * 5 minutes
  */
 exports.fibonacci = function(n) {
-    // TODO
+    
+    let serie;
+
+    let posX = 0;
+    let posY = 1;
+
+    for (let i = 0; i < n; i++) {
+        serie = posX + posY;
+        posX = posY;
+        posY = serie;
+    }
+
+    return posX;
+
 };
