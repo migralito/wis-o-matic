@@ -286,7 +286,7 @@ exports.returnPreviousElementsFromArrayInReverseOrder = function(array, first, q
  */
 exports.isPalindrome = function(string) {
     const array = string
-        .replaceAll(/[^a-zA-Z]/g, '') // this will transform "Race, CaR" into "RaceCaR"
+        .replace(/[^a-zA-Z]/g, '') // this will transform "Race, CaR" into "RaceCaR"
         .toLowerCase() // this will transform "RaceCaR" into "racecar"
         .split(""); // this will transform "racecar" into ["r","a","c","e","c","a","r"]
     
@@ -297,17 +297,11 @@ exports.isPalindrome = function(string) {
             newArray.push(array[i])
         }
 
-        array.join("");
-        newArray.join("")
+        let arrayEnString = array.join("");
+        let newArrayEnString = newArray.join("")
 
+        const isTrue = arrayEnString === newArrayEnString && true;
 
-        console.log(array);
-        console.log(newArray);
-
-        if(array === newArray) {
-            return true;
-        } else {
-            return false
-        }
+        return isTrue;
 
 };
