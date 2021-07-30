@@ -70,5 +70,27 @@ describe('arrays module testing', function() {
         expect(arrays.isPalindrome("A Santa Lived As a Devil At NASA.")).toBeTruthy();
         expect(arrays.isPalindrome("A Santa Live As a Devil At NASA.")).toBeFalsy();
     });
+
+    test('findMissing', function() {
+        expect(arrays.findMissing([1,2,4,5,6])).toBe(3);
+        expect(arrays.findMissing([10,9,1,6,2,8,4,3,5])).toBe(7);
+    });
+
+    test('highestConsecutive', function() {
+        expect(arrays.highestConsecutive([
+            491, 846, 835, 202, 863, 336, 372, 992, 39, 211, 561, 282, 900, 270, 428, 267, 333, 363, 568, 680, 649, 692,
+            953, 159, 290, 31, 832, 302, 179, 587, 340, 286, 90, 442, 447, 641, 920, 219, 136, 966, 255, 647, 885, 753,
+            415, 982, 205, 779, 468, 752, 882, 814, 332, 702, 92, 15, 876, 903, 807, 234, 73, 998, 927, 80, 275, 353,
+            544, 342, 716, 215, 374, 504, 799, 784, 842, 66, 991, 738, 456, 455, 435, 474, 83, 168, 171, 352, 142, 318,
+            13, 446, 546, 828, 232, 851, 317, 747, 595, 101, 403, 21
+        ])).toBe(3);
+    });
+
+    test('sort', function() {
+        expect(arrays.sort([9,4,1,6]))
+            .toStrictEqual([1,4,6,9]);
+        expect(arrays.sort([1388, 12, 679, 335, 987, 1010, 431, 295]))
+            .toStrictEqual([12, 295, 335, 431, 679, 987, 1010, 1388]);
+    });
 });
 

@@ -305,3 +305,95 @@ exports.isPalindrome = function(string) {
     return isTrue;
 
 };
+
+/**
+ * Given an array containing all but one of the numbers 1..n, find the missing number.
+ *
+ * ### Expected behavior
+ * ```
+ * findMissing([1,2,4,5,6]) => 3
+ * findMissing([10,9,1,6,2,8,4,3,5]) => 7
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ * - array access
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 10 minutes
+ */
+exports.findMissing = function(array) {
+    // TODO
+};
+
+/**
+ * Given an array of numbers, find the number that repeats 3 times consecutively.
+ *
+ * ### Expected behavior
+ * ```
+ * triplette([3453, 877, 4, 234, 23, 23, 23, 765, 560, 90]) => 23
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ * - array access
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 10 minutes
+ */
+exports.triplette = function(array) {
+    // TODO
+};
+
+/**
+ * Given an array of numbers, find the set of three consecutive numbers that add up to the highest sum.
+ *
+ * ### Expected behavior
+ * ```
+ * highestConsecutive([ 491, 846, 835, 202, 863, 336, 372, 992, 39, 211, 561, 282, 900, 270, 428, 267, 333, 363, 568,
+ *                      680, 649, 692, 953, 159, 290, 31, 832, 302, 179, 587, 340, 286, 90, 442, 447, 641, 920, 219,
+ *                      136, 966, 255, 647, 885, 753, 415, 982, 205, 779, 468, 752, 882, 814, 332, 702, 92, 15, 876,
+ *                      903, 807, 234, 73, 998, 927, 80, 275, 353, 544, 342, 716, 215, 374, 504, 799, 784, 842, 66, 991,
+ *                      738, 456, 455, 435, 474, 83, 168, 171, 352, 142, 318, 13, 446, 546, 828, 232, 851, 317, 747,
+ *                      595, 101, 403, 21
+ *                   ]) => 2586
+ * ```
+ * - 491 + 846 + 835 = 2172
+ * - 846 + 835 + 202 = 1883
+ * - ...
+ * - 876 + 903 + 807 = 2586  << highest!!!
+ * - ...
+ * - 101 + 403 + 21 = 525
+ *
+ * ### Resources to use
+ * - for statement
+ * - array access
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 30 minutes
+ */
+exports.highestConsecutive = function(array) {
+    // TODO
+};
+
+/**
+ * Given an array of numbers, sort them in ascending order **without using .sort() method**.
+ *
+ * ### Expected behavior
+ * ```
+ * sort([9,4,1,6]) => [1,4,6,9]
+ * sort([1388, 12, 679, 335, 987, 1010, 431, 295]) => [12, 295, 335, 431, 679, 987, 1010, 1388]
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ * - array access
+ * - DO NOT use .sort() method
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 30 to 60 minutes
+ */
+exports.sort = function(array) {
+    // TODO
+};
+
