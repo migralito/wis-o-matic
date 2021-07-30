@@ -471,9 +471,15 @@ exports.plotTetrahedron = function(size, plotter) {
  * 5 minutes
  */
 exports.fibonacci = function(n) {
-    
+    // TODO this variable is:
+    //  - incorrectly named. A "serie" is the sum of all elements of a sequence
+    //  - should be declared inside the for. It's basically a temporary variable
     let serie;
 
+    // TODO these variables are also incorrectly named
+    //  - they do not represent any position
+    //  - they represent the value of two consecutive members of the sequence
+    //    (whether it's position 0 and 1, 8 and 9, 34 and 35, etc)
     let posX = 0;
     let posY = 1;
 
@@ -485,4 +491,19 @@ exports.fibonacci = function(n) {
 
     return posX;
 
+    // TODO read and remove after
+    //  As example, I share here the way I would do this:
+    //     let left = 0, right = 1;
+    //     if (n == 0) {
+    //         return left;
+    //     }
+    //     if (n == 1) {
+    //         return right;
+    //     }
+    //     for (let i = 2; i <= n; i++) {
+    //         let next = left + right;
+    //         left = right;
+    //         right = next;
+    //     }
+    //     return right;
 };

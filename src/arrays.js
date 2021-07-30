@@ -289,19 +289,19 @@ exports.isPalindrome = function(string) {
         .replace(/[^a-zA-Z]/g, '') // this will transform "Race, CaR" into "RaceCaR"
         .toLowerCase() // this will transform "RaceCaR" into "racecar"
         .split(""); // this will transform "racecar" into ["r","a","c","e","c","a","r"]
-    
 
-        let newArray = [];
 
-        for (let i = array.length - 1; i >=0; i--) {
-            newArray.push(array[i])
-        }
+    let newArray = [];
 
-        let arrayEnString = array.join("");
-        let newArrayEnString = newArray.join("")
+    for (let i = array.length - 1; i >=0; i--) {
+        newArray.push(array[i])
+    }
 
-        const isTrue = arrayEnString === newArrayEnString && true;
+    let arrayEnString = array.join("");
+    let newArrayEnString = newArray.join("")
 
-        return isTrue;
+    // TODO these two lines can be merged into a single one. Also, why the '&& true'?
+    const isTrue = arrayEnString === newArrayEnString && true;
+    return isTrue;
 
 };
