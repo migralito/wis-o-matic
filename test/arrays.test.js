@@ -76,6 +76,10 @@ describe('arrays module testing', function() {
         expect(arrays.findMissing([10,9,1,6,2,8,4,3,5])).toBe(7);
     });
 
+    test('triplette', function() {
+        expect(arrays.triplette([3453, 877, 4, 234, 23, 23, 23, 765, 560, 90])).toBe(23);
+    });
+
     test('highestConsecutive', function() {
         expect(arrays.highestConsecutive([
             491, 846, 835, 202, 863, 336, 372, 992, 39, 211, 561, 282, 900, 270, 428, 267, 333, 363, 568, 680, 649, 692,
