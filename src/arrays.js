@@ -324,15 +324,9 @@ exports.isPalindrome = function(string) {
  */
 exports.findMissing = function(array) {
   
-    let seEncontro;
+    let seEncontro = false;
 
     for (let i = 1; i < array.length + 1; i++) {
-
-        if (seEncontro === false) { // TODO there iss a more elegant way of writing this (without === false)
-            return i - 1;
-        }
-
-        seEncontro = false;
 
         for (let j = 0; j < array.length; j++) {
            
@@ -340,6 +334,10 @@ exports.findMissing = function(array) {
                 seEncontro = true
             }
             
+        }
+
+        if (seEncontro === false) { // TODO there iss a more elegant way of writing this (without === false)
+            return i 
         }
 
          
