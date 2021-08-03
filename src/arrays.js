@@ -365,7 +365,7 @@ exports.findMissing = function(array) {
  * 10 minutes
  */
 exports.triplette = function(array) {
-    // TODO
+    console.log("hola")
 };
 
 /**
