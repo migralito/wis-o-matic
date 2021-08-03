@@ -324,9 +324,11 @@ exports.isPalindrome = function(string) {
  */
 exports.findMissing = function(array) {
   
-    let seEncontro = false;
+    
 
     for (let i = 1; i < array.length + 1; i++) {
+
+        let seEncontro = false;
 
         for (let j = 0; j < array.length; j++) {
            
@@ -336,12 +338,10 @@ exports.findMissing = function(array) {
             
         }
 
-        if (seEncontro === false) { // TODO there iss a more elegant way of writing this (without === false)
+
+        if (!seEncontro) { // TODO there iss a more elegant way of writing this (without === false)
             return i 
         }
-
-         
-
 
      }
 
@@ -363,7 +363,7 @@ exports.findMissing = function(array) {
  * 10 minutes
  */
 exports.triplette = function(array) {
-    console.log("hola")
+ 
 };
 
 /**
