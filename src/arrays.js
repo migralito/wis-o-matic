@@ -323,8 +323,31 @@ exports.isPalindrome = function(string) {
  * 10 minutes
  */
 exports.findMissing = function(array) {
-    // TODO
-};
+  
+    let seEncontro;
+
+    for (let i = 1; i < array.length + 1; i++) {
+        
+        if (seEncontro === false) {
+            return i - 1;
+        }
+
+        seEncontro = false;
+
+        for (let j = 0; j < array.length; j++) {
+           
+            if (i === array[j]) {
+                seEncontro = true
+            }
+            
+        }
+
+         
+
+
+     }
+
+    };
 
 /**
  * Given an array of numbers, find the number that repeats 3 times consecutively.
