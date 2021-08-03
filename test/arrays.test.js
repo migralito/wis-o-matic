@@ -74,6 +74,7 @@ describe('arrays module testing', function() {
     test('findMissing', function() {
         expect(arrays.findMissing([1,2,4,5,6])).toBe(3);
         expect(arrays.findMissing([10,9,1,6,2,8,4,3,5])).toBe(7);
+        expect(arrays.findMissing([1,2,3,4,5,6,7,8,9,10,11,13])).toBe(12);
     });
 
     test('triplette', function() {
