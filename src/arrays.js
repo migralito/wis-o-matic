@@ -327,8 +327,8 @@ exports.findMissing = function(array) {
     let seEncontro;
 
     for (let i = 1; i < array.length + 1; i++) {
-        
-        if (seEncontro === false) {
+
+        if (seEncontro === false) { // TODO there iss a more elegant way of writing this (without === false)
             return i - 1;
         }
 
