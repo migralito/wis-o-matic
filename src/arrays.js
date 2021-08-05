@@ -403,7 +403,27 @@ exports.triplette = function(array) {
  * 30 minutes
  */
 exports.highestConsecutive = function(array) {
-    // TODO
+    
+    console.log(array.length)
+
+    let nroMasAlto = 0;
+
+
+    for (let i = 0; i < array.length; i++) {
+
+        let sumaTresNros = array[i] + array[i+1] + array[i+2];
+        
+        if(sumaTresNros > nroMasAlto) {
+            nroMasAlto = sumaTresNros;
+        }
+
+        if(i ===  array.length - 3) {
+            return nroMasAlto 
+        }
+
+        
+    }
+
 };
 
 /**
