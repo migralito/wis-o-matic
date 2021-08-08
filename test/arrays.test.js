@@ -88,9 +88,16 @@ describe('arrays module testing', function() {
             415, 982, 205, 779, 468, 752, 882, 814, 332, 702, 92, 15, 876, 903, 807, 234, 73, 998, 927, 80, 275, 353,
             544, 342, 716, 215, 374, 504, 799, 784, 842, 66, 991, 738, 456, 455, 435, 474, 83, 168, 171, 352, 142, 318,
             13, 446, 546, 828, 232, 851, 317, 747, 595, 101, 403, 21
-        ])).toBe(3);
+        ])).toBe(2586);
     });
 
+    test('switchHighestWithFirst', function() {
+        expect(arrays.switchHighestWithFirst([1,4,9,6]))
+            .toStrictEqual([9,4,1,6]);
+        expect(arrays.sort([1388, 12, 679, 335, 1987, 1010, 431, 295]))
+            .toStrictEqual([1987, 12, 679, 335, 1388, 1010, 431, 295]);
+    });
+    
     test('sort', function() {
         expect(arrays.sort([9,4,1,6]))
             .toStrictEqual([1,4,6,9]);

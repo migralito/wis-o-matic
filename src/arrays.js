@@ -427,6 +427,26 @@ exports.highestConsecutive = function(array) {
 };
 
 /**
+ * Given an array of numbers, find the highest and switch it with the first element.
+ *
+ * ### Expected behavior
+ * ```
+ * sort([1,4,9,6]) => [9,4,1,9]
+ * sort([1388, 12, 679, 335, 1987, 1010, 431, 295]) => [1987, 12, 679, 335, 1388, 1010, 431, 295]
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ * - array access
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 30 to 60 minutes
+ */
+exports.switchHighestWithFirst = function(array) {
+    // TODO
+};
+
+/**
  * Given an array of numbers, sort them in ascending order **without using .sort() method**.
  *
  * ### Expected behavior
