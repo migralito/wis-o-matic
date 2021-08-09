@@ -92,8 +92,8 @@ describe('arrays module testing', function() {
     });
 
     test('sort', function() {
-        expect(arrays.sort([9,4,1,6]))
-            .toStrictEqual([1,4,6,9]);
+        expect(arrays.sort([9,4,1,12,6]))
+            .toStrictEqual([1,4,6,9,12]);
         expect(arrays.sort([1388, 12, 679, 335, 987, 1010, 431, 295]))
             .toStrictEqual([12, 295, 335, 431, 679, 987, 1010, 1388]);
     });
