@@ -94,7 +94,7 @@ describe('arrays module testing', function() {
     test('switchHighestWithFirst', function() {
         expect(arrays.switchHighestWithFirst([1,4,9,6]))
             .toStrictEqual([9,4,1,6]);
-        expect(arrays.sort([1388, 12, 679, 335, 1987, 1010, 431, 295]))
+        expect(arrays.switchHighestWithFirst([1388, 12, 679, 335, 1987, 1010, 431, 295]))
             .toStrictEqual([1987, 12, 679, 335, 1388, 1010, 431, 295]);
     });
     

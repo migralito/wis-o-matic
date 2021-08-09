@@ -404,7 +404,6 @@ exports.triplette = function(array) {
  */
 exports.highestConsecutive = function(array) {
     
-    console.log(array.length)
 
     let nroMasAlto = 0;
 
@@ -443,8 +442,38 @@ exports.highestConsecutive = function(array) {
  * 30 to 60 minutes
  */
 exports.switchHighestWithFirst = function(array) {
-    // TODO
+
+    let biggerNumber= 0;
+      
+    for (let i = 0; i < array.length; i++) {
+
+        if (array[i]>biggerNumber) {
+            biggerNumber = array[i]
+        }
+
+    };
+
+    for (let i = 0; i < array.length; i++) {
+      
+        if(array[i] === biggerNumber) {
+            array[i] = array[0]
+        }
+
+    }
+
+
+    array.shift()
+
+    let newArray = [biggerNumber, ...array]
+
+    return newArray;
+
 };
+
+
+
+
+
 
 /**
  * Given an array of numbers, sort them in ascending order **without using .sort() method**.
@@ -469,25 +498,6 @@ exports.switchHighestWithFirst = function(array) {
 
 exports.sort = function(array) {
 
-    let newArray = [];
-    let biggerNumber= 0;
-    let minorNumber;
-    
-    
-    for (let i = 0; i < array.length; i++) {
-
-        if (array[i]>biggerNumber) {
-            biggerNumber = array[i]
-        }
-
-        
-
-
-
-
-
-    };
-
-    console.log(biggerNumber)
+   
 
 }
