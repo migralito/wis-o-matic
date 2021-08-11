@@ -1,3 +1,4 @@
+
 /**
  * Print to console the elements of an array
  *
@@ -45,6 +46,9 @@ exports.printArrayElementsUsingForOf = function (array, console) {
  * ### Help - External resources (documentation)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
+
+ 
+
 exports.printArrayElementsUsingTraditionalFor = function (array, console) {
     for (let i =  0 ; i < array.length; i++) {
         console.log(array[i])
@@ -448,25 +452,21 @@ exports.switchHighestWithFirst = function(array) {
     for (let i = 0; i < array.length; i++) {
 
         if (array[i]>biggerNumber) {
-            biggerNumber = array[i]
+            biggerNumber = array[i];
         }
 
     };
 
-    for (let i = 0; i < array.length; i++) {
-      
-        if(array[i] === biggerNumber) {
-            array[i] = array[0]
-        }
+    
+    
+ 
 
-    }
+    array[array.indexOf(biggerNumber)] = array[0];
+    array[0] = biggerNumber;
+
+    return array;
 
 
-    array.shift()
-
-    let newArray = [biggerNumber, ...array]
-
-    return newArray;
 
 };
 
@@ -498,6 +498,6 @@ exports.switchHighestWithFirst = function(array) {
 
 exports.sort = function(array) {
 
-   
+
 
 }
