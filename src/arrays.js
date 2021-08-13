@@ -457,22 +457,16 @@ exports.switchHighestWithFirst = function(array) {
 
     };
 
-    
-    
- 
-
-    array[array.indexOf(biggerNumber)] = array[0];
+    // TODO array.indexOf traverses the array once more, and we don't want to do that because we have already traversed
+    //  the array. We want to do that only once because traversing an array can be an "expensive" operation in the sense
+    //  that if the array is too long, then the computer can take a considerable amount of time doing it. So, traversing
+    //  the array once is better that doing it twice. Along these lines, don't use array.indexOf. Try a different
+    //  approach
+    //array[array.indexOf(biggerNumber)] = array[0];
     array[0] = biggerNumber;
 
     return array;
-
-
-
 };
-
-
-
-
 
 
 /**
