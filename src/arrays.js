@@ -369,7 +369,7 @@ exports.triplette = function(array) {
         if (array[i] === array[i+1] && array[i+1] === array[i+2]) {
             return array[i]
         }
-        
+ 
     }
  
 
@@ -404,7 +404,7 @@ exports.triplette = function(array) {
  */
 exports.highestConsecutive = function(array) {
     
-    console.log(array.length)
+    
 
     let nroMasAlto = 0;
 
@@ -421,7 +421,7 @@ exports.highestConsecutive = function(array) {
             return nroMasAlto 
         }
 
-        
+
     }
 
 };
@@ -444,6 +444,29 @@ exports.highestConsecutive = function(array) {
  * 30 to 60 minutes
  */
 exports.sort = function(array) {
-    // TODO
+
+
+    let newArray = [];
+
+    let minorNumber = 0;
+   
+    let biggerNumber= 0;
+   
+    for (let i = 0; i < array.length; i++) {
+
+        let currentNumber = array[i]  //9
+   
+        if(currentNumber>biggerNumber) {
+            biggerNumber = currentNumber;   //9
+        } 
+
+    }
+    
+
+    console.log(biggerNumber)
+    return newArray;         
+
+
+
 };
 
