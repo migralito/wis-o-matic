@@ -458,9 +458,6 @@ exports.switchHighestWithFirst = function(array) {
     };
 
     
-    
- 
-
     array[array.indexOf(biggerNumber)] = array[0];
     array[0] = biggerNumber;
 
@@ -496,8 +493,21 @@ exports.switchHighestWithFirst = function(array) {
 
 //sort([9,4,1,6]) => [1,4,6,9]
 
-exports.sort = function(array) {
+const sort = function(array) {
+
+    for (let i = 0; i < array.length; i++) {
+
+        if(array[i]>array[i+1]) {
+            array[i+1] = array[0];
+            array[0] =  array[i+1] 
+        }
+
+        console.log(array)
+    }
 
 
 
 }
+
+sort([9,4,1,6])
+
