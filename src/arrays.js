@@ -448,28 +448,27 @@ exports.highestConsecutive = function(array) {
 exports.switchHighestWithFirst = function(array) {
 
     let biggerNumber= 0;
+    let positionBiggerNumber;
       
     for (let i = 0; i < array.length; i++) {
 
         if (array[i]>biggerNumber) {
             biggerNumber = array[i];
+            positionBiggerNumber = i; 
+
+        }
+
+        if (i === array.length - 1) {
+            array[positionBiggerNumber] = array[0];
+            array[0] = biggerNumber;
         }
 
     };
 
     
-    array[array.indexOf(biggerNumber)] = array[0];
-    array[0] = biggerNumber;
-
     return array;
 
-
-
 };
-
-
-
-
 
 
 /**
@@ -495,15 +494,7 @@ exports.switchHighestWithFirst = function(array) {
 
 const sort = function(array) {
 
-    for (let i = 0; i < array.length; i++) {
-
-        if(array[i]>array[i+1]) {
-            array[i+1] = array[0];
-            array[0] =  array[i+1] 
-        }
-
-        console.log(array)
-    }
+   
 
 
 
