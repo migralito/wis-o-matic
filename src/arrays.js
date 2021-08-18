@@ -457,15 +457,11 @@ exports.switchHighestWithFirst = function(array) {
             positionBiggerNumber = i; 
 
         }
-
-        if (i === array.length - 1) {
-            array[positionBiggerNumber] = array[0];
-            array[0] = biggerNumber;
-        }
-
+          
     };
 
-    
+    array[positionBiggerNumber] = array[0];
+    array[0] = biggerNumber;
     return array;
 
 };
