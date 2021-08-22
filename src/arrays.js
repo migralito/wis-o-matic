@@ -1,4 +1,3 @@
-
 /**
  * Print to console the elements of an array
  *
@@ -19,6 +18,8 @@
  * ### Help - External resources (documentation)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
+const {param} = require("express/lib/router");
+
 exports.printArrayElementsUsingForOf = function (array, console) {
     for (const arrayElement of array) {
         console.log(arrayElement)
@@ -449,24 +450,22 @@ exports.highestConsecutive = function(array) {
 exports.switchHighestWithFirst = function(array) {
 
     let biggerNumber= 0;
+    let positionBiggerNumber;
       
     for (let i = 0; i < array.length; i++) {
 
         if (array[i]>biggerNumber) {
             biggerNumber = array[i];
-        }
+            positionBiggerNumber = i; 
 
+        }
+          
     };
 
-    // TODO array.indexOf traverses the array once more, and we don't want to do that because we have already traversed
-    //  the array. We want to do that only once because traversing an array can be an "expensive" operation in the sense
-    //  that if the array is too long, then the computer can take a considerable amount of time doing it. So, traversing
-    //  the array once is better that doing it twice. Along these lines, don't use array.indexOf. Try a different
-    //  approach
-    //array[array.indexOf(biggerNumber)] = array[0];
+    array[positionBiggerNumber] = array[0];
     array[0] = biggerNumber;
-
     return array;
+
 };
 
 
@@ -488,18 +487,68 @@ exports.switchHighestWithFirst = function(array) {
  * 30 to 60 minutes
  */
 
-
-//sort([9,4,1,6]) => [1,4,6,9]
-
 exports.sort = function(array) {
 
 
+    let minorNumber = array[0];
+    let newArrayToDecompose = [];
+    let newArrayToReturn = [];
+    let positionMinor;
+
+
+    for (let i = 0; i < array.length; i++) {
+
+        newArrayToDecompose.push(array[i]);
+
+    }
+
+
+    for (let i = 0; i < array.length; i++) {
+
+        for (let j = 0; j < newArrayToDecompose.length ; j++) {
+
+            if(newArrayToDecompose[j] < minorNumber || newArrayToDecompose[j] === minorNumber) {
+                minorNumber = newArrayToDecompose[j];
+                positionMinor = j;
+            }
+
+        }
+
+
+        newArrayToReturn.push(minorNumber);
+        newArrayToDecompose[positionMinor] =  newArrayToDecompose[0];
+        newArrayToDecompose[0] = minorNumber;
+        newArrayToDecompose.shift();
+        minorNumber = newArrayToDecompose[0];
+
+    }
+
+
+
+    return newArrayToReturn;
+
+
+}
 
 
 
 
 
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
