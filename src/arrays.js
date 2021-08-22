@@ -1,3 +1,4 @@
+
 /**
  * Print to console the elements of an array
  *
@@ -45,6 +46,9 @@ exports.printArrayElementsUsingForOf = function (array, console) {
  * ### Help - External resources (documentation)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
+
+ 
+
 exports.printArrayElementsUsingTraditionalFor = function (array, console) {
     for (let i =  0 ; i < array.length; i++) {
         console.log(array[i])
@@ -404,7 +408,7 @@ exports.triplette = function(array) {
  */
 exports.highestConsecutive = function(array) {
     
-    
+
 
     let nroMasAlto = 0;
 
@@ -427,6 +431,46 @@ exports.highestConsecutive = function(array) {
 };
 
 /**
+ * Given an array of numbers, find the highest and switch it with the first element.
+ *
+ * ### Expected behavior
+ * ```
+ * sort([1,4,9,6]) => [9,4,1,9]
+ * sort([1388, 12, 679, 335, 1987, 1010, 431, 295]) => [1987, 12, 679, 335, 1388, 1010, 431, 295]
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ * - array access
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 30 to 60 minutes
+ */
+exports.switchHighestWithFirst = function(array) {
+
+    let biggerNumber= 0;
+      
+    for (let i = 0; i < array.length; i++) {
+
+        if (array[i]>biggerNumber) {
+            biggerNumber = array[i];
+        }
+
+    };
+
+    // TODO array.indexOf traverses the array once more, and we don't want to do that because we have already traversed
+    //  the array. We want to do that only once because traversing an array can be an "expensive" operation in the sense
+    //  that if the array is too long, then the computer can take a considerable amount of time doing it. So, traversing
+    //  the array once is better that doing it twice. Along these lines, don't use array.indexOf. Try a different
+    //  approach
+    //array[array.indexOf(biggerNumber)] = array[0];
+    array[0] = biggerNumber;
+
+    return array;
+};
+
+
+/**
  * Given an array of numbers, sort them in ascending order **without using .sort() method**.
  *
  * ### Expected behavior
@@ -443,30 +487,20 @@ exports.highestConsecutive = function(array) {
  * ### Estimated amount of time needed to complete the task
  * 30 to 60 minutes
  */
+
+
+//sort([9,4,1,6]) => [1,4,6,9]
+
 exports.sort = function(array) {
 
 
-    let newArray = [];
 
-    let minorNumber = 0;
-   
-    let biggerNumber= 0;
-   
-    for (let i = 0; i < array.length; i++) {
 
-        let currentNumber = array[i]  //9
-   
-        if(currentNumber>biggerNumber) {
-            biggerNumber = currentNumber;   //9
-        } 
-
-    }
-    
-
-    console.log(biggerNumber)
-    return newArray;         
 
 
 
 };
+
+
+
 
