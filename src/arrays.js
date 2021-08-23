@@ -490,11 +490,51 @@ exports.switchHighestWithFirst = function(array) {
 
 const sort = function(array) {
 
-   
+
+   let minorNumber = array[0];
+   let newArray = []; 
+    
+      
+   for (let i = 0; i < array.length; i++) {
+       
+    for (let j = 0; j < array.length; j++) {
+       
+        if (newArray.length === 0) {
+            if (array[j] < minorNumber) {
+                minorNumber = array[j]
+                newArray.push(minorNumber)
+            }
+        } else {
+            for (let i = 0; i < newArray.length; i++) {
+
+                if (array[j] < minorNumber) {
+                    minorNumber = array[j]
+                    newArray.push(minorNumber)
+                }
+              
+            
+                
+            }
+        }
+
+        
+        
+    }
+
+       
+   }
+    
+
+    console.log(newArray)
+    console.log("hola")
+
+
+   return newArray;
 
 
 
 }
 
-sort([9,4,1,6])
 
+
+sort([9,4,1,6])
