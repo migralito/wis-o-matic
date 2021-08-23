@@ -104,5 +104,11 @@ describe('arrays module testing', function() {
         expect(arrays.sort([1388, 12, 679, 335, 987, 1010, 431, 295]))
             .toStrictEqual([12, 295, 335, 431, 679, 987, 1010, 1388]);
     });
+    test('sort2', function() {
+        expect(arrays.sort2([9,4,1,12,6]))
+            .toStrictEqual([1,4,6,9,12]);
+        expect(arrays.sort2([1388, 12, 679, 335, 987, 1010, 431, 295]))
+            .toStrictEqual([12, 295, 335, 431, 679, 987, 1010, 1388]);
+    });
 });
 

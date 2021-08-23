@@ -1,4 +1,3 @@
-
 /**
  * Print to console the elements of an array
  *
@@ -19,6 +18,8 @@
  * ### Help - External resources (documentation)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
+const {param} = require("express/lib/router");
+
 exports.printArrayElementsUsingForOf = function (array, console) {
     for (const arrayElement of array) {
         console.log(arrayElement)
@@ -373,7 +374,7 @@ exports.triplette = function(array) {
         if (array[i] === array[i+1] && array[i+1] === array[i+2]) {
             return array[i]
         }
-        
+ 
     }
  
 
@@ -409,6 +410,7 @@ exports.triplette = function(array) {
 exports.highestConsecutive = function(array) {
     
 
+
     let nroMasAlto = 0;
 
 
@@ -424,7 +426,7 @@ exports.highestConsecutive = function(array) {
             return nroMasAlto 
         }
 
-        
+
     }
 
 };
@@ -485,56 +487,120 @@ exports.switchHighestWithFirst = function(array) {
  * 30 to 60 minutes
  */
 
-
-//sort([9,4,1,6]) => [1,4,6,9]
-
-const sort = function(array) {
+exports.sort = function(array) {
 
 
-   let minorNumber = array[0];
-   let newArray = []; 
-    
-      
-   for (let i = 0; i < array.length; i++) {
-       
-    for (let j = 0; j < array.length; j++) {
-       
-        if (newArray.length === 0) {
-            if (array[j] < minorNumber) {
-                minorNumber = array[j]
-                newArray.push(minorNumber)
+    let minorNumber = array[0];
+    let newArrayToDecompose = [];
+    let newArrayToReturn = [];
+    let positionMinor;
+
+
+    for (let i = 0; i < array.length; i++) {
+
+        newArrayToDecompose.push(array[i]);
+
+    }
+
+
+    for (let i = 0; i < array.length; i++) {
+
+        for (let j = 0; j < newArrayToDecompose.length ; j++) {
+
+            if(newArrayToDecompose[j] < minorNumber || newArrayToDecompose[j] === minorNumber) {
+                minorNumber = newArrayToDecompose[j];
+                positionMinor = j;
             }
-        } else {
-            for (let i = 0; i < newArray.length; i++) {
 
-                if (array[j] < minorNumber) {
-                    minorNumber = array[j]
-                    newArray.push(minorNumber)
-                }
-              
-            
-                
-            }
         }
+
+
+        newArrayToReturn.push(minorNumber);
+        newArrayToDecompose[positionMinor] =  newArrayToDecompose[0];
+        newArrayToDecompose[0] = minorNumber;
+        newArrayToDecompose.shift();
+        minorNumber = newArrayToDecompose[0];
+
+    }
+
+
+
+    return newArrayToReturn;
+
+
+}
+
+
+/**
+ * Given an array of numbers, sort them in ascending order **without using .sort() method**.
+ *
+ * ### Expected behavior
+ * ```
+ * sort([9,4,1,6]) => [1,4,6,9]
+ * sort([1388, 12, 679, 335, 987, 1010, 431, 295]) => [12, 295, 335, 431, 679, 987, 1010, 1388]
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ * - array access
+ * - DO NOT use .sort() method
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 30 to 60 minutes
+ */
+
+
+exports.sort2 = function(array) {
+
+    let minorNumber = array[0];
+    let positionMinor;
+
+
+    for (let i = 0; i < array.length; i++) {
+        
+        for (let j = i; j < array.length; j++) {
+            
+            if( array[j] < minorNumber || array[j] === minorNumber) {
+                minorNumber = array[j]
+                positionMinor = j;
+            }
+            
+        }
+
+        array[positionMinor] = array[i];
+        array[i] = minorNumber;
+
+        minorNumber = array[array.length-1];
 
         
         
     }
 
-       
-   }
-    
-
-    console.log(newArray)
-    console.log("hola")
-
-
-   return newArray;
-
+    return array;
 
 
 }
 
 
 
-sort([9,4,1,6])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
