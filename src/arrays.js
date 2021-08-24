@@ -552,14 +552,35 @@ exports.sort = function(array) {
 
 exports.sort2 = function(array) {
 
+    // TODO
+    //  - no es necesario inicializar nada al comienzo del ejercicio. La inicializacion tiene que ser entre el primer
+    //    for y el segundo. Vos estas usando una forma alternativa, que es inicializar antes de comenzar el primer bucle
+    //    y justo antes de **finalizar** una vuelta para comenzar con la proxima vuelta tambien inicializada. Eso es
+    //    equivalente a inicializar una unica vez, apenas comenzado el bucle:
+    //       {codigo de inicializacion}
+    //       for (...) {
+    //          ...
+    //          {codigo de inicializacion}
+    //       }
+    //    en la mayoria de los casos (no siempre), equivale a
+    //       for (...) {
+    //          {codigo de inicializacion}
+    //          ...
+    //       }
+    //  - no seria necesario usar 2 variables, porque una depende de la otra. Podes valerte solo de la posicion:
+    //       let minorPosition = 0;   // <== esto implica que minorNumber==array[minorPosition]
     let minorNumber = array[0];
     let positionMinor;
 
 
     for (let i = 0; i < array.length; i++) {
-        
+
         for (let j = i; j < array.length; j++) {
-            
+
+            // TODO
+            //  - primero, podes usar (x<=y) en lugar de hacer (x<y | x===y)
+            //  - no necesitas en realidad hacer (x<=y). Con (x<y) deberia alcanzarte. Al principio no te va a
+            //    funcionar, pero tenes que poder arreglarlo para que solo quede el <
             if( array[j] < minorNumber || array[j] === minorNumber) {
                 minorNumber = array[j]
                 positionMinor = j;
