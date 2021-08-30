@@ -48,7 +48,7 @@ exports.printArrayElementsUsingForOf = function (array, console) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 
- 
+
 
 exports.printArrayElementsUsingTraditionalFor = function (array, console) {
     for (let i =  0 ; i < array.length; i++) {
@@ -328,29 +328,29 @@ exports.isPalindrome = function(string) {
  * 10 minutes
  */
 exports.findMissing = function(array) {
-  
-    
+
+
 
     for (let i = 1; i < array.length + 1; i++) {
 
         let seEncontro = false;
 
         for (let j = 0; j < array.length; j++) {
-           
+
             if (i === array[j]) {
                 seEncontro = true
             }
-            
+
         }
 
 
         if (!seEncontro) { // TODO there iss a more elegant way of writing this (without === false)
-            return i 
+            return i
         }
 
-     }
+    }
 
-    };
+};
 
 /**
  * Given an array of numbers, find the number that repeats 3 times consecutively.
@@ -370,13 +370,13 @@ exports.findMissing = function(array) {
 exports.triplette = function(array) {
 
     for (let i = 0; i < array.length; i++) {
-        
+
         if (array[i] === array[i+1] && array[i+1] === array[i+2]) {
             return array[i]
         }
- 
+
     }
- 
+
 
 };
 
@@ -408,7 +408,7 @@ exports.triplette = function(array) {
  * 30 minutes
  */
 exports.highestConsecutive = function(array) {
-    
+
 
 
     let nroMasAlto = 0;
@@ -417,13 +417,13 @@ exports.highestConsecutive = function(array) {
     for (let i = 0; i < array.length; i++) {
 
         let sumaTresNros = array[i] + array[i+1] + array[i+2];
-        
+
         if(sumaTresNros > nroMasAlto) {
             nroMasAlto = sumaTresNros;
         }
 
         if(i ===  array.length - 3) {
-            return nroMasAlto 
+            return nroMasAlto
         }
 
 
@@ -451,15 +451,15 @@ exports.switchHighestWithFirst = function(array) {
 
     let biggerNumber= 0;
     let positionBiggerNumber;
-      
+
     for (let i = 0; i < array.length; i++) {
 
         if (array[i]>biggerNumber) {
             biggerNumber = array[i];
-            positionBiggerNumber = i; 
+            positionBiggerNumber = i;
 
         }
-          
+
     };
 
     array[positionBiggerNumber] = array[0];
@@ -536,7 +536,8 @@ exports.sort = function(array) {
  *
  * ### Expected behavior
  * ```
- * 
+ * sort([9,4,1,6]) => [1,4,6,9]
+ * sort([1388, 12, 679, 335, 987, 1010, 431, 295]) => [12, 295, 335, 431, 679, 987, 1010, 1388]
  * ```
  *
  * ### Resources to use
@@ -546,57 +547,162 @@ exports.sort = function(array) {
  *
  * ### Estimated amount of time needed to complete the task
  * 30 to 60 minutes
- * 
- * sort([9,4,1,6]) => [1,4,6,9]
- * sort([1388, 12, 679, 335, 987, 1010, 431, 295]) => [12, 295, 335, 431, 679, 987, 1010, 1388]
  */
 
 
 exports.sort2 = function(array) {
 
-      for (let i = 0; i < array.length; i++) {
-  
+    for (let i = 0; i < array.length; i++) {
+
         let positionMinor = i;
-        
+
         for (let j = i + 1; j < array.length; j++) {
-            
+
             if( array[j] < array[positionMinor]) {
                 positionMinor = j
             }
-            
+
         }
 
         let firstElementReplace = array[i]
 
         array[i] = array[positionMinor];
         array[positionMinor] = firstElementReplace;
-     
-        
+
+
     }
 
 
     return array;
 }
 
+/**
+ * Given an array of numbers, reverse it
+ *
+ * ### Expected behavior
+ * ```
+ * let arr = [1,6,3,7,4,9,2];
+ * reverse(arr);
+ * console.log(arr);
+ * > [2,9,4,7,3,6,1]
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ * - array access
+ * - DO NOT use array's .reverse() method
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 1 to 2 hours
+ */
+exports.reverse = function(array) {
+    // TODO
+};
 
+/**
+ * Given an array of numbers, remove the element at index i.
+ *
+ * ### Expected behavior
+ * ```
+ * let arr = [9,3,7,4,1,9,5,2,0,3,2,5,5,2,8];
+ * remove(arr, 6);
+ * console.log(arr);
+ * > [9,3,7,4,1,9,2,0,3,2,5,5,2,8]
+ * ```
+ *
+ * ### Resources to use
+ * - any method of Array prototype
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 10 minutes
+ */
 
+exports.removeAtIndex = function(array, index) {
+    // TODO
+};
 
+/**
+ * Given an array of numbers, insert the given number into the specified position.
+ *
+ * ### Expected behavior
+ * ```
+ * let arr = [9,3,7,4,1,9,5,2,0,3,2,5,5,2,8];
+ * insertAtIndex(arr, 6, 2021);
+ * console.log(arr);
+ * > [9,3,7,4,1,9,2021,5,2,0,3,2,5,5,2,8]
+ * ```
+ *
+ * ### Resources to use
+ * - any method of Array prototype
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 20 minutes
+ */
+exports.insertAtIndex = function(array, index, number) {
+    // TODO
+};
 
+/**
+ * Given an array of numbers, rotate the array one step to the right, moving the last element as first.
+ *
+ * ### Expected behavior
+ * ```
+ * let arr = [9,3,7,4,1,9,5,2,0,3,2,5,5,2,8];
+ * rotate(arr);
+ * console.log(arr);
+ * > [8,9,3,7,4,1,9,5,2,0,3,2,5,5,2]
+ * ```
+ *
+ * ### Resources to use
+ * - any method of Array prototype
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 30 minutes
+ */
+exports.rotate = function(array) {
+    // TODO
+};
 
+/**
+ * Given an array of numbers, rotate the array N elements to the right, moving the last N elements at the beginning.
+ *
+ * ### Expected behavior
+ * ```
+ * let arr = [9,3,7,4,1,9,5,2,0,3,2,5,5,2,8];
+ * rotate(arr, 4);
+ * console.log(arr);
+ * > [5,5,2,8,9,3,7,4,1,9,5,2,0,3,2]
+ * ```
+ *
+ * ### Resources to use
+ * - any method of Array prototype
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 1 hour
+ */
+exports.rotateMany = function(array, n) {
+    // TODO
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/**
+ * Given an array of numbers, group pair numbers to the left and odd numbers to the right, maintaining the given order.
+ *
+ * ### Expected behavior
+ * ```
+ * let arr = [9,3,7,4,1,9,5,2,0,3,2,5,5,2,8];
+ * separatePairsAndOdds(arr);
+ * console.log(arr);
+ * > [4,2,0,2,2,8,9,3,7,1,9,5,3,5,5]
+ * ```
+ *
+ * ### Resources to use
+ * - for statement
+ * - array access
+ * - any method of Array prototype
+ *
+ * ### Estimated amount of time needed to complete the task
+ * 1 day
+ */
+exports.separatePairsAndOdds = function(array) {
+    // TODO
+};

@@ -39,9 +39,10 @@ describe('arrays module testing', function() {
     });
 
     test('returnLastElementsOfArray', function() {
-        let result = arrays.returnLastElementsOfArray(['a','b','c','d'], 2);
-        expect(result)
+        expect(arrays.returnLastElementsOfArray(['a', 'b', 'c', 'd'], 2))
             .toEqual(['c','d']);
+        expect(arrays.returnLastElementsOfArray(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'], 3))
+            .toEqual(['f','g', 'h']);
     });
 
     test('returnFollowingElementsFromArray', function() {
@@ -109,6 +110,42 @@ describe('arrays module testing', function() {
             .toStrictEqual([1,4,6,9,12]);
         expect(arrays.sort2([1388, 12, 679, 335, 987, 1010, 431, 295]))
             .toStrictEqual([12, 295, 335, 431, 679, 987, 1010, 1388]);
+    });
+
+    test('reverse', function() {
+        let arr = [1,6,3,7,4,9,2];
+        arrays.reverse(arr);
+        expect(arr).toEqual([2,9,4,7,3,6,1]);
+    });
+
+    test('removeAtIndex', function() {
+        let arr = [9,3,7,4,1,9,5,2,0,3,2,5,5,2,8];
+        arrays.removeAtIndex(arr, 6);
+        expect(arr).toEqual([9,3,7,4,1,9,2,0,3,2,5,5,2,8]);
+    });
+
+    test('insertAtIndex', function() {
+        let arr = [9,3,7,4,1,9,5,2,0,3,2,5,5,2,8];
+        arrays.insertAtIndex(arr, 6, 2021);
+        expect(arr).toEqual([9,3,7,4,1,9,2021,5,2,0,3,2,5,5,2,8]);
+    });
+
+    test('rotate', function() {
+        let arr = [9,3,7,4,1,9,5,2,0,3,2,5,5,2,8];
+        arrays.rotate(arr);
+        expect(arr).toEqual([8,9,3,7,4,1,9,5,2,0,3,2,5,5,2]);
+    });
+
+    test('rotateMany', function() {
+        let arr = [9,3,7,4,1,9,5,2,0,3,2,5,5,2,8];
+        arrays.rotateMany(arr, 4);
+        expect(arr).toEqual([5,5,2,8,9,3,7,4,1,9,5,2,0,3,2]);
+    });
+
+    test('separatePairsAndOdds', function() {
+        let arr = [9,3,7,4,1,9,5,2,0,3,2,5,5,2,8];
+        arrays.separatePairsAndOdds(arr);
+        expect(arr).toEqual([4,2,0,2,2,8,9,3,7,1,9,5,3,5,5]);
     });
 });
 
