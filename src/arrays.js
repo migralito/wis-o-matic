@@ -579,7 +579,7 @@ exports.sort2 = function(array) {
 }
 
 
-sort2([9,4,1,12,6])
+
 
 
 
