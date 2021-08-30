@@ -536,8 +536,7 @@ exports.sort = function(array) {
  *
  * ### Expected behavior
  * ```
- * sort([9,4,1,6]) => [1,4,6,9]
- * sort([1388, 12, 679, 335, 987, 1010, 431, 295]) => [12, 295, 335, 431, 679, 987, 1010, 1388]
+ * 
  * ```
  *
  * ### Resources to use
@@ -547,43 +546,40 @@ exports.sort = function(array) {
  *
  * ### Estimated amount of time needed to complete the task
  * 30 to 60 minutes
+ * 
+ * sort([9,4,1,6]) => [1,4,6,9]
+ * sort([1388, 12, 679, 335, 987, 1010, 431, 295]) => [12, 295, 335, 431, 679, 987, 1010, 1388]
  */
 
 
 exports.sort2 = function(array) {
 
-    let minorNumber = array[0];
-    let positionMinor;
-
-
-    for (let i = 0; i < array.length; i++) {
+      for (let i = 0; i < array.length; i++) {
+  
+        let positionMinor = i;
         
-        for (let j = i; j < array.length; j++) {
+        for (let j = i + 1; j < array.length; j++) {
             
-            if( array[j] < minorNumber || array[j] === minorNumber) {
-                minorNumber = array[j]
-                positionMinor = j;
+            if( array[j] < array[positionMinor]) {
+                positionMinor = j
             }
             
         }
 
-        array[positionMinor] = array[i];
-        array[i] = minorNumber;
+        let firstElementReplace = array[i]
 
-        minorNumber = array[array.length-1];
-
-        
+        array[i] = array[positionMinor];
+        array[positionMinor] = firstElementReplace;
+     
         
     }
 
+
     return array;
-
-
 }
 
 
-
-
+sort2([9,4,1,12,6])
 
 
 
