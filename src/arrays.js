@@ -596,8 +596,21 @@ exports.sort2 = function(array) {
  * 1 to 2 hours
  */
 exports.reverse = function(array) {
-    // TODO
+
+   let firstIndexArray = 0
+    
+   for (let backIndexArray = array.length -1; backIndexArray > (array.length/2); backIndexArray--) {
+
+       let currentBackNumber = array[backIndexArray]
+       array[backIndexArray] = array[firstIndexArray];
+       array[firstIndexArray] = currentBackNumber; 
+       firstIndexArray++;
+
+   }
+
 };
+
+
 
 /**
  * Given an array of numbers, remove the element at index i.
