@@ -595,22 +595,19 @@ exports.sort2 = function(array) {
  * ### Estimated amount of time needed to complete the task
  * 1 to 2 hours
  */
-exports.reverse = function(array) {
-
-   let firstIndexArray = 0
-    
+const reverse = function(array) {
+ 
    for (let backIndexArray = array.length -1; backIndexArray > (array.length/2); backIndexArray--) {
 
        let currentBackNumber = array[backIndexArray]
-       array[backIndexArray] = array[firstIndexArray];
-       array[firstIndexArray] = currentBackNumber; 
-       firstIndexArray++;
-
+       array[backIndexArray] = array[(array.length-1)-backIndexArray];
+       array[(array.length-1)-backIndexArray] = currentBackNumber; 
+   
    }
 
 };
 
-
+reverse([1,6,3,7,4,9,2]);
 
 /**
  * Given an array of numbers, remove the element at index i.
@@ -631,7 +628,10 @@ exports.reverse = function(array) {
  */
 
 exports.removeAtIndex = function(array, index) {
-    // TODO
+    
+
+
+
 };
 
 /**
