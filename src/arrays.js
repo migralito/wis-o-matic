@@ -595,7 +595,7 @@ exports.sort2 = function(array) {
  * ### Estimated amount of time needed to complete the task
  * 1 to 2 hours
  */
-const reverse = function(array) {
+exports.reverse = function(array) {
  
    for (let backIndexArray = array.length -1; backIndexArray > (array.length/2); backIndexArray--) {
 
@@ -607,7 +607,7 @@ const reverse = function(array) {
 
 };
 
-reverse([1,6,3,7,4,9,2]);
+
 
 /**
  * Given an array of numbers, remove the element at index i.
@@ -628,11 +628,21 @@ reverse([1,6,3,7,4,9,2]);
  */
 
 exports.removeAtIndex = function(array, index) {
-    
-
-
-
+    for (let i = 0; i < array.length; i++) {
+        if( i === index) {
+            for (let j = index; j < array.length; j++) {
+                if(j === (array.length - 1)) {
+                    array.pop()
+                } else {
+                    array[j] = array[j+1];
+                }
+            }
+        }
+    }
 };
+
+
+
 
 /**
  * Given an array of numbers, insert the given number into the specified position.
