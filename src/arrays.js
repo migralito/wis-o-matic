@@ -139,19 +139,10 @@ exports.returnFirstElementsOfArray = function(array, n) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
 exports.returnLastElementsOfArray = function(array, n) {
-
     let arrayRecortado = [];
-
-    // TODO remove comment
-    // for(let i=0; i<array.length; i++) {
-    //     if(i >= n ) {
-    //         arrayRecortado.push(array[i])
-    //     }
-    // }
     for(let i=n; i<array.length; i++) {
         arrayRecortado.push(array[i])
     }
-
     return arrayRecortado;
 }
 
@@ -177,25 +168,10 @@ exports.returnLastElementsOfArray = function(array, n) {
  */
 exports.returnFollowingElementsFromArray = function(array, first, quantity) {
     let newArray = [];
-
-    // TODO
-    //  Remove this comment (including code))
-    //
-    //  Once you get to the expected quantity, you managed to skip the following iterations. It's clever, but
-    //  suboptimal. Can you think of a way to make the `for` iterate the exact number of times?
-    // for(let i= first -1; i< array.length; i++) {
-    //     if (newArray.length < quantity ) {
-    //         newArray.push(array[i])
-    //     }
-    // }
-
     for(let i= 0; i< quantity; i++) {
         newArray.push(array[(first-1)+i])
     }
-
     return newArray
-
-
 }
 
 /**
@@ -219,22 +195,9 @@ exports.returnFollowingElementsFromArray = function(array, first, quantity) {
  */
 exports.returnPreviousElementsFromArray = function(array, first, quantity) {
     let newArray = [];
-
-    // TODO
-    //  remove comment (including code)
-    //
-    //  Once you get to the expected quantity, you managed to skip the following iterations. It's clever, but
-    //  suboptimal. Can you think of a way to make the `for` iterate the exact number of times?
-    // for (let i = first -quantity; i < array.length; i++) {
-    //     if(newArray.length < quantity) {
-    //         newArray.push(array[i])
-    //     }
-    // }
-
     for (let i= 0; i < quantity; i++) {
         newArray.push(array[(first -quantity)+i])
     }
-
     return newArray;
 }
 
@@ -260,11 +223,9 @@ exports.returnPreviousElementsFromArray = function(array, first, quantity) {
  */
 exports.returnPreviousElementsFromArrayInReverseOrder = function(array, first, quantity) {
     let newArray = []
-
     for (let i = first-1 ; i > quantity ; i-- ) {
         newArray.push(array[i])
     }
-
     return newArray;
 }
 
@@ -294,7 +255,6 @@ exports.isPalindrome = function(string) {
         .replace(/[^a-zA-Z]/g, '') // this will transform "Race, CaR" into "RaceCaR"
         .toLowerCase() // this will transform "RaceCaR" into "racecar"
         .split(""); // this will transform "racecar" into ["r","a","c","e","c","a","r"]
-
 
     let newArray = [];
 
@@ -328,28 +288,17 @@ exports.isPalindrome = function(string) {
  * 10 minutes
  */
 exports.findMissing = function(array) {
-
-
-
     for (let i = 1; i < array.length + 1; i++) {
-
         let seEncontro = false;
-
         for (let j = 0; j < array.length; j++) {
-
             if (i === array[j]) {
                 seEncontro = true
             }
-
         }
-
-
         if (!seEncontro) { // TODO there iss a more elegant way of writing this (without === false)
             return i
         }
-
     }
-
 };
 
 /**
@@ -368,16 +317,11 @@ exports.findMissing = function(array) {
  * 10 minutes
  */
 exports.triplette = function(array) {
-
     for (let i = 0; i < array.length; i++) {
-
         if (array[i] === array[i+1] && array[i+1] === array[i+2]) {
             return array[i]
         }
-
     }
-
-
 };
 
 /**
@@ -408,27 +352,16 @@ exports.triplette = function(array) {
  * 30 minutes
  */
 exports.highestConsecutive = function(array) {
-
-
-
     let nroMasAlto = 0;
-
-
     for (let i = 0; i < array.length; i++) {
-
         let sumaTresNros = array[i] + array[i+1] + array[i+2];
-
         if(sumaTresNros > nroMasAlto) {
             nroMasAlto = sumaTresNros;
         }
-
         if(i ===  array.length - 3) {
             return nroMasAlto
         }
-
-
     }
-
 };
 
 /**
@@ -453,19 +386,14 @@ exports.switchHighestWithFirst = function(array) {
     let positionBiggerNumber;
 
     for (let i = 0; i < array.length; i++) {
-
         if (array[i]>biggerNumber) {
             biggerNumber = array[i];
             positionBiggerNumber = i;
-
         }
-
     };
-
     array[positionBiggerNumber] = array[0];
     array[0] = biggerNumber;
     return array;
-
 };
 
 
@@ -488,46 +416,27 @@ exports.switchHighestWithFirst = function(array) {
  */
 
 exports.sort = function(array) {
-
-
     let minorNumber = array[0];
     let newArrayToDecompose = [];
     let newArrayToReturn = [];
     let positionMinor;
-
-
     for (let i = 0; i < array.length; i++) {
-
         newArrayToDecompose.push(array[i]);
-
     }
-
-
     for (let i = 0; i < array.length; i++) {
-
         for (let j = 0; j < newArrayToDecompose.length ; j++) {
-
             if(newArrayToDecompose[j] < minorNumber || newArrayToDecompose[j] === minorNumber) {
                 minorNumber = newArrayToDecompose[j];
                 positionMinor = j;
             }
-
         }
-
-
         newArrayToReturn.push(minorNumber);
         newArrayToDecompose[positionMinor] =  newArrayToDecompose[0];
         newArrayToDecompose[0] = minorNumber;
         newArrayToDecompose.shift();
         minorNumber = newArrayToDecompose[0];
-
     }
-
-
-
     return newArrayToReturn;
-
-
 }
 
 
@@ -551,28 +460,17 @@ exports.sort = function(array) {
 
 
 exports.sort2 = function(array) {
-
     for (let i = 0; i < array.length; i++) {
-
         let positionMinor = i;
-
         for (let j = i + 1; j < array.length; j++) {
-
             if( array[j] < array[positionMinor]) {
                 positionMinor = j
             }
-
         }
-
         let firstElementReplace = array[i]
-
         array[i] = array[positionMinor];
         array[positionMinor] = firstElementReplace;
-
-
     }
-
-
     return array;
 }
 
@@ -596,15 +494,11 @@ exports.sort2 = function(array) {
  * 1 to 2 hours
  */
 exports.reverse = function(array) {
- 
    for (let backIndexArray = array.length -1; backIndexArray > (array.length/2); backIndexArray--) {
-
        let currentBackNumber = array[backIndexArray]
        array[backIndexArray] = array[(array.length-1)-backIndexArray];
-       array[(array.length-1)-backIndexArray] = currentBackNumber; 
-   
+       array[(array.length-1)-backIndexArray] = currentBackNumber;
    }
-
 };
 
 
@@ -662,7 +556,16 @@ exports.removeAtIndex = function(array, index) {
  * 20 minutes
  */
 exports.insertAtIndex = function(array, index, number) {
-    // TODO
+    let numberDisplaced;
+    for (let i = 0; i < array.length; i++) {
+        if(i === index) {
+            numberDisplaced = array[i];
+            array[i] = number;
+        }
+        if(i > index) {
+
+        }
+    }
 };
 
 /**
