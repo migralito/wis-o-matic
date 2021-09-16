@@ -589,8 +589,22 @@ exports.insertAtIndex = function(array, index, number) {
  * 30 minutes
  */
 exports.rotate = function(array) {
-    // TODO
+    let lastNumberArray = array[array.length - 1];
+    let numberLastReplaced;
+    let currentNumber;
+    for (let i = 0; i < array.length; i++) {
+        if (i === 0) {
+            numberLastReplaced = array[i];
+            array[i] = lastNumberArray;
+        } else {
+            currentNumber = array[i];
+            array[i] = numberLastReplaced;
+            numberLastReplaced = currentNumber;
+        }
+    }
 };
+
+
 
 /**
  * Given an array of numbers, rotate the array N elements to the right, moving the last N elements at the beginning.
