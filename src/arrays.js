@@ -523,14 +523,12 @@ exports.reverse = function(array) {
 
 exports.removeAtIndex = function(array, index) {
     for (let i = 0; i < array.length; i++) {
-        if( i === index) {
-            for (let j = index; j < array.length; j++) {
-                if(j === (array.length - 1)) {
-                    array.pop()
-                } else {
-                    array[j] = array[j+1];
-                }
-            }
+        if(i === array.length - 1) {
+            array.pop();
+            return array;
+        }
+        if(i >= index) {
+              array[i] = array[i+1];
         }
     }
 };
@@ -556,16 +554,21 @@ exports.removeAtIndex = function(array, index) {
  * 20 minutes
  */
 exports.insertAtIndex = function(array, index, number) {
-    let numberDisplaced;
+    let numberReplaced;
+    let shifNumber;
+    let lastNumberOfTheArray = array[array.length - 1];
     for (let i = 0; i < array.length; i++) {
         if(i === index) {
-            numberDisplaced = array[i];
-            array[i] = number;
+            numberReplaced = array[i];
+            array[i] = number
         }
         if(i > index) {
-
+            shifNumber = array[i]
+            array[i] = numberReplaced;
+            numberReplaced = shifNumber;
         }
     }
+    array.push(lastNumberOfTheArray);
 };
 
 /**

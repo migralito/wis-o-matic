@@ -125,7 +125,7 @@ describe('arrays module testing', function() {
     });
 
     test('insertAtIndex', function() {
-        let arr = [9,3,7,4,1,9,5,2,0,3,2,5,5,2,8];
+       let arr = [9,3,7,4,1,9,5,2,0,3,2,5,5,2,8];
         arrays.insertAtIndex(arr, 6, 2021);
         expect(arr).toEqual([9,3,7,4,1,9,2021,5,2,0,3,2,5,5,2,8]);
     });
