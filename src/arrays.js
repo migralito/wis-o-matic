@@ -624,8 +624,13 @@ exports.rotate = function(array) {
  * 1 hour
  */
 exports.rotateMany = function(array, n) {
-    // TODO
+    for (let i = array.length - 1; i >= array.length - n; i--) {
+       let numberDisplaced = array.pop()
+       array.unshift(numberDisplaced);
+    }
 };
+
+
 
 /**
  * Given an array of numbers, group pair numbers to the left and odd numbers to the right, maintaining the given order.
