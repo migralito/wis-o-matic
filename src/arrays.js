@@ -652,5 +652,17 @@ exports.rotateMany = function(array, n) {
  * 1 day
  */
 exports.separatePairsAndOdds = function(array) {
-    // TODO
+   let newArrayPairs = [];
+   let newArrayOdd = [];
+   for (let i = 0; i < array.length; i++) {
+       if(array[i] % 2 == 0) {
+        newArrayPairs.push(array[i])
+       } else {
+        newArrayOdd.push(array[i])
+       }
+   }
+   array = [...newArrayPairs, ...newArrayOdd];
+   console.log(array);
 };
+
+
