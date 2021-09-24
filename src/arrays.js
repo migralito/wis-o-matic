@@ -18,7 +18,7 @@
  * ### Help - External resources (documentation)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
-const {param} = require("express/lib/router");
+
 
 exports.printArrayElementsUsingForOf = function (array, console) {
     for (const arrayElement of array) {
@@ -51,7 +51,7 @@ exports.printArrayElementsUsingForOf = function (array, console) {
 
 
 exports.printArrayElementsUsingTraditionalFor = function (array, console) {
-    for (let i =  0 ; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         console.log(array[i])
     }
 }
@@ -80,7 +80,7 @@ exports.printArrayElementsUsingTraditionalFor = function (array, console) {
 exports.printArrayElementsReverseOrder = function (array, console) {
     // TODO: FYI, you can also do i>=0
     //  (let i = array.length - 1; i>-1; i--) {
-    for (let i = array.length - 1; i>=0; i--) {
+    for (let i = array.length - 1; i >= 0; i--) {
         console.log(array[i])
     }
 }
@@ -104,7 +104,7 @@ exports.printArrayElementsReverseOrder = function (array, console) {
  * ### Help - External resources (documentation)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
-exports.returnFirstElementsOfArray = function(array, n) {
+exports.returnFirstElementsOfArray = function (array, n) {
 
     let arrayRecortado = [];
 
@@ -112,7 +112,7 @@ exports.returnFirstElementsOfArray = function(array, n) {
         arrayRecortado.push(arrayRecortadoElement)
 
         // TODO always better to do === instead of ==
-        if(arrayRecortado.length === n) {
+        if (arrayRecortado.length === n) {
             return arrayRecortado;
         }
     }
@@ -138,9 +138,9 @@ exports.returnFirstElementsOfArray = function(array, n) {
  * ### Help - External resources (documentation)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
-exports.returnLastElementsOfArray = function(array, n) {
+exports.returnLastElementsOfArray = function (array, n) {
     let arrayRecortado = [];
-    for(let i=n; i<array.length; i++) {
+    for (let i = n; i < array.length; i++) {
         arrayRecortado.push(array[i])
     }
     return arrayRecortado;
@@ -166,10 +166,10 @@ exports.returnLastElementsOfArray = function(array, n) {
  * ### Help - External resources (documentation)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
-exports.returnFollowingElementsFromArray = function(array, first, quantity) {
+exports.returnFollowingElementsFromArray = function (array, first, quantity) {
     let newArray = [];
-    for(let i= 0; i< quantity; i++) {
-        newArray.push(array[(first-1)+i])
+    for (let i = 0; i < quantity; i++) {
+        newArray.push(array[(first - 1) + i])
     }
     return newArray
 }
@@ -193,10 +193,10 @@ exports.returnFollowingElementsFromArray = function(array, first, quantity) {
  * ### Help - External resources (documentation)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
-exports.returnPreviousElementsFromArray = function(array, first, quantity) {
+exports.returnPreviousElementsFromArray = function (array, first, quantity) {
     let newArray = [];
-    for (let i= 0; i < quantity; i++) {
-        newArray.push(array[(first -quantity)+i])
+    for (let i = 0; i < quantity; i++) {
+        newArray.push(array[(first - quantity) + i])
     }
     return newArray;
 }
@@ -221,9 +221,9 @@ exports.returnPreviousElementsFromArray = function(array, first, quantity) {
  * ### Help - External resources (documentation)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
  */
-exports.returnPreviousElementsFromArrayInReverseOrder = function(array, first, quantity) {
+exports.returnPreviousElementsFromArrayInReverseOrder = function (array, first, quantity) {
     let newArray = []
-    for (let i = first-1 ; i > quantity ; i-- ) {
+    for (let i = first - 1; i > quantity; i--) {
         newArray.push(array[i])
     }
     return newArray;
@@ -250,7 +250,7 @@ exports.returnPreviousElementsFromArrayInReverseOrder = function(array, first, q
  * ### Estimated amount of time needed to complete the task
  * 15 minutes
  */
-exports.isPalindrome = function(string) {
+exports.isPalindrome = function (string) {
     const array = string
         .replace(/[^a-zA-Z]/g, '') // this will transform "Race, CaR" into "RaceCaR"
         .toLowerCase() // this will transform "RaceCaR" into "racecar"
@@ -258,7 +258,7 @@ exports.isPalindrome = function(string) {
 
     let newArray = [];
 
-    for (let i = array.length - 1; i >=0; i--) {
+    for (let i = array.length - 1; i >= 0; i--) {
         newArray.push(array[i])
     }
 
@@ -287,7 +287,7 @@ exports.isPalindrome = function(string) {
  * ### Estimated amount of time needed to complete the task
  * 10 minutes
  */
-exports.findMissing = function(array) {
+exports.findMissing = function (array) {
     for (let i = 1; i < array.length + 1; i++) {
         let seEncontro = false;
         for (let j = 0; j < array.length; j++) {
@@ -316,9 +316,9 @@ exports.findMissing = function(array) {
  * ### Estimated amount of time needed to complete the task
  * 10 minutes
  */
-exports.triplette = function(array) {
+exports.triplette = function (array) {
     for (let i = 0; i < array.length; i++) {
-        if (array[i] === array[i+1] && array[i+1] === array[i+2]) {
+        if (array[i] === array[i + 1] && array[i + 1] === array[i + 2]) {
             return array[i]
         }
     }
@@ -351,14 +351,14 @@ exports.triplette = function(array) {
  * ### Estimated amount of time needed to complete the task
  * 30 minutes
  */
-exports.highestConsecutive = function(array) {
+exports.highestConsecutive = function (array) {
     let nroMasAlto = 0;
     for (let i = 0; i < array.length; i++) {
-        let sumaTresNros = array[i] + array[i+1] + array[i+2];
-        if(sumaTresNros > nroMasAlto) {
+        let sumaTresNros = array[i] + array[i + 1] + array[i + 2];
+        if (sumaTresNros > nroMasAlto) {
             nroMasAlto = sumaTresNros;
         }
-        if(i ===  array.length - 3) {
+        if (i === array.length - 3) {
             return nroMasAlto
         }
     }
@@ -380,13 +380,13 @@ exports.highestConsecutive = function(array) {
  * ### Estimated amount of time needed to complete the task
  * 30 to 60 minutes
  */
-exports.switchHighestWithFirst = function(array) {
+exports.switchHighestWithFirst = function (array) {
 
-    let biggerNumber= 0;
+    let biggerNumber = 0;
     let positionBiggerNumber;
 
     for (let i = 0; i < array.length; i++) {
-        if (array[i]>biggerNumber) {
+        if (array[i] > biggerNumber) {
             biggerNumber = array[i];
             positionBiggerNumber = i;
         }
@@ -415,7 +415,7 @@ exports.switchHighestWithFirst = function(array) {
  * 30 to 60 minutes
  */
 
-exports.sort = function(array) {
+exports.sort = function (array) {
     let minorNumber = array[0];
     let newArrayToDecompose = [];
     let newArrayToReturn = [];
@@ -424,14 +424,14 @@ exports.sort = function(array) {
         newArrayToDecompose.push(array[i]);
     }
     for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < newArrayToDecompose.length ; j++) {
-            if(newArrayToDecompose[j] < minorNumber || newArrayToDecompose[j] === minorNumber) {
+        for (let j = 0; j < newArrayToDecompose.length; j++) {
+            if (newArrayToDecompose[j] < minorNumber || newArrayToDecompose[j] === minorNumber) {
                 minorNumber = newArrayToDecompose[j];
                 positionMinor = j;
             }
         }
         newArrayToReturn.push(minorNumber);
-        newArrayToDecompose[positionMinor] =  newArrayToDecompose[0];
+        newArrayToDecompose[positionMinor] = newArrayToDecompose[0];
         newArrayToDecompose[0] = minorNumber;
         newArrayToDecompose.shift();
         minorNumber = newArrayToDecompose[0];
@@ -459,11 +459,11 @@ exports.sort = function(array) {
  */
 
 
-exports.sort2 = function(array) {
+exports.sort2 = function (array) {
     for (let i = 0; i < array.length; i++) {
         let positionMinor = i;
         for (let j = i + 1; j < array.length; j++) {
-            if( array[j] < array[positionMinor]) {
+            if (array[j] < array[positionMinor]) {
                 positionMinor = j
             }
         }
@@ -493,12 +493,12 @@ exports.sort2 = function(array) {
  * ### Estimated amount of time needed to complete the task
  * 1 to 2 hours
  */
-exports.reverse = function(array) {
-   for (let backIndexArray = array.length -1; backIndexArray > (array.length/2); backIndexArray--) {
-       let currentBackNumber = array[backIndexArray]
-       array[backIndexArray] = array[(array.length-1)-backIndexArray];
-       array[(array.length-1)-backIndexArray] = currentBackNumber;
-   }
+exports.reverse = function (array) {
+    for (let backIndexArray = array.length - 1; backIndexArray > (array.length / 2); backIndexArray--) {
+        let currentBackNumber = array[backIndexArray]
+        array[backIndexArray] = array[(array.length - 1) - backIndexArray];
+        array[(array.length - 1) - backIndexArray] = currentBackNumber;
+    }
 };
 
 
@@ -521,14 +521,14 @@ exports.reverse = function(array) {
  * 10 minutes
  */
 
-exports.removeAtIndex = function(array, index) {
+exports.removeAtIndex = function (array, index) {
     for (let i = 0; i < array.length; i++) {
-        if(i === array.length - 1) {
+        if (i === array.length - 1) {
             array.pop();
             return array;
         }
-        if(i >= index) {
-              array[i] = array[i+1];
+        if (i >= index) {
+            array[i] = array[i + 1];
         }
     }
 };
@@ -553,16 +553,16 @@ exports.removeAtIndex = function(array, index) {
  * ### Estimated amount of time needed to complete the task
  * 20 minutes
  */
-exports.insertAtIndex = function(array, index, number) {
+exports.insertAtIndex = function (array, index, number) {
     let numberReplaced;
     let shifNumber;
     let lastNumberOfTheArray = array[array.length - 1];
     for (let i = 0; i < array.length; i++) {
-        if(i === index) {
+        if (i === index) {
             numberReplaced = array[i];
             array[i] = number
         }
-        if(i > index) {
+        if (i > index) {
             shifNumber = array[i]
             array[i] = numberReplaced;
             numberReplaced = shifNumber;
@@ -588,7 +588,7 @@ exports.insertAtIndex = function(array, index, number) {
  * ### Estimated amount of time needed to complete the task
  * 30 minutes
  */
-exports.rotate = function(array) {
+exports.rotate = function (array) {
     let lastNumberArray = array[array.length - 1];
     let numberLastReplaced;
     let currentNumber;
@@ -623,10 +623,10 @@ exports.rotate = function(array) {
  * ### Estimated amount of time needed to complete the task
  * 1 hour
  */
-exports.rotateMany = function(array, n) {
+exports.rotateMany = function (array, n) {
     for (let i = array.length - 1; i >= array.length - n; i--) {
-       let numberDisplaced = array.pop()
-       array.unshift(numberDisplaced);
+        let numberDisplaced = array.pop()
+        array.unshift(numberDisplaced);
     }
 };
 
@@ -651,18 +651,13 @@ exports.rotateMany = function(array, n) {
  * ### Estimated amount of time needed to complete the task
  * 1 day
  */
-exports.separatePairsAndOdds = function(array) {
-   let newArrayPairs = [];
-   let newArrayOdd = [];
-   for (let i = 0; i < array.length; i++) {
-       if(array[i] % 2 == 0) {
-        newArrayPairs.push(array[i])
-       } else {
-        newArrayOdd.push(array[i])
-       }
-   }
-   array = [...newArrayPairs, ...newArrayOdd];
-   console.log(array);
+exports.separatePairsAndOdds = function (array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 == 0) {
+            array.unshift(array[i]);
+            i++;
+        }
+    }
 };
 
 

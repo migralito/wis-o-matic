@@ -1,5 +1,7 @@
 const arrays = require('../src/arrays');
 
+
+
 function newConsole() {
     return {
         arr: [],
