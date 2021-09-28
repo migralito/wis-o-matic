@@ -652,10 +652,22 @@ exports.rotateMany = function (array, n) {
  * 1 day
  */
 exports.separatePairsAndOdds = function (array) {
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] % 2 == 0) {
-            array.unshift(array[i]);
-            i++;
+    let lengthArray = array.length;
+    for (let i = 0; i < lengthArray; i++) {
+        if (array[0] % 2 !== 0) {
+            let numberDisplaced = array.shift(array[0])
+            array.push(numberDisplaced); 
+        } else {
+            let numberPair = array[0];
+            for (let i = 1; i < array.length; i++) {
+                if(array[i] % 2 !== 0) {
+                    array[0] = array[i];
+                    array[i] = numberPair;
+                    numberDisplaced = array.shift(array[0]);
+                    array.push(numberDisplaced);
+                    i--;
+                }   
+            }
         }
     }
 };
