@@ -522,6 +522,9 @@ exports.reverse = function (array) {
  */
 
 exports.removeAtIndex = function (array, index) {
+    // TODO well done!
+    //  Now, I will ask you to remove this implementation, and use a specific array method that will allow you to solve
+    //  this instead of using a loop
     for (let i = 0; i < array.length; i++) {
         if (i === array.length - 1) {
             array.pop();
@@ -554,6 +557,9 @@ exports.removeAtIndex = function (array, index) {
  * 20 minutes
  */
 exports.insertAtIndex = function (array, index, number) {
+    // TODO well done!
+    //  Now, I will ask you to remove this implementation, and use a specific array method that will allow you to solve
+    //  this instead of using a loop
     let numberReplaced;
     let shifNumber;
     let lastNumberOfTheArray = array[array.length - 1];
@@ -589,6 +595,8 @@ exports.insertAtIndex = function (array, index, number) {
  * 30 minutes
  */
 exports.rotate = function (array) {
+    // TODO well done!
+    //  Now, I will ask you to remove this implementation, and reuse rotateMany method
     let lastNumberArray = array[array.length - 1];
     let numberLastReplaced;
     let currentNumber;
