@@ -525,7 +525,7 @@ exports.removeAtIndex = function (array, index) {
     // TODO well done!
     //  Now, I will ask you to remove this implementation, and use a specific array method that will allow you to solve
     //  this instead of using a loop
-    for (let i = 0; i < array.length; i++) {
+   /*  for (let i = 0; i < array.length; i++) {
         if (i === array.length - 1) {
             array.pop();
             return array;
@@ -534,6 +534,12 @@ exports.removeAtIndex = function (array, index) {
             array[i] = array[i + 1];
         }
     }
+     */
+    const newArray = array.filter((e, i)=> (
+         i !== index 
+    ))
+
+    return newArray;
 };
 
 
@@ -660,7 +666,7 @@ exports.rotateMany = function (array, n) {
  * 1 day
  */
 exports.separatePairsAndOdds = function (array) {
-    let lengthArray = array.length;
+  /*   let lengthArray = array.length;
     for (let i = 0; i < lengthArray; i++) {
         if (array[0] % 2 !== 0) {
             let numberDisplaced = array.shift(array[0])
@@ -677,7 +683,7 @@ exports.separatePairsAndOdds = function (array) {
                 }   
             }
         }
-    }
-};
+    }*/
+}; 
 
 
