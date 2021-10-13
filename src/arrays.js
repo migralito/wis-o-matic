@@ -535,11 +535,9 @@ exports.removeAtIndex = function (array, index) {
         }
     }
      */
-    const newArray = array.filter((e, i)=> (
+    array = array.filter((e,i)=> (
          i !== index 
     ))
-
-    return newArray;
 };
 
 
