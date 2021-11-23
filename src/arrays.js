@@ -535,9 +535,7 @@ exports.removeAtIndex = function (array, index) {
         }
     }
      */
-    array = array.filter((e,i)=> (
-         i !== index 
-    ))
+    array.splice(index, 1)
 };
 
 
