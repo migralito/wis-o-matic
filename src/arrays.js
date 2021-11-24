@@ -562,7 +562,7 @@ exports.insertAtIndex = function (array, index, number) {
     // TODO well done!
     //  Now, I will ask you to remove this implementation, and use a specific array method that will allow you to solve
     //  this instead of using a loop
-    let numberReplaced;
+    /*let numberReplaced;
     let shifNumber;
     let lastNumberOfTheArray = array[array.length - 1];
     for (let i = 0; i < array.length; i++) {
@@ -576,7 +576,8 @@ exports.insertAtIndex = function (array, index, number) {
             numberReplaced = shifNumber;
         }
     }
-    array.push(lastNumberOfTheArray);
+    array.push(lastNumberOfTheArray);*/
+    array.splice(index, 0, number)
 };
 
 /**
