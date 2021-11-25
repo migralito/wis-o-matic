@@ -20,6 +20,7 @@
  */
 
 
+const {rotateMany} = require("./arrays");
 exports.printArrayElementsUsingForOf = function (array, console) {
     for (const arrayElement of array) {
         console.log(arrayElement)
@@ -600,7 +601,7 @@ exports.insertAtIndex = function (array, index, number) {
 exports.rotate = function (array) {
     // TODO well done!
     //  Now, I will ask you to remove this implementation, and reuse rotateMany method
-    let lastNumberArray = array[array.length - 1];
+   /* let lastNumberArray = array[array.length - 1];
     let numberLastReplaced;
     let currentNumber;
     for (let i = 0; i < array.length; i++) {
@@ -612,7 +613,8 @@ exports.rotate = function (array) {
             array[i] = numberLastReplaced;
             numberLastReplaced = currentNumber;
         }
-    }
+    }*/
+    exports.rotateMany(array, 1)
 };
 
 
