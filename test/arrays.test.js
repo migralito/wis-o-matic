@@ -43,7 +43,7 @@ describe('arrays module testing', function() {
     test('returnLastElementsOfArray', function() {
         expect(arrays.returnLastElementsOfArray(['a', 'b', 'c', 'd'], 2))
             .toEqual(['c','d']);
-        expect(arrays.returnLastElementsOfArray(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'], 3))
+        expect(arrays.returnLastElementsOfArray(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'], 5))
             .toEqual(['f','g', 'h']);
     });
 

@@ -148,6 +148,8 @@ exports.returnLastElementsOfArray = function (array, n) {
 }
 
 
+
+
 /**
  * Return n elements from an array starting from given position
  *
@@ -667,7 +669,6 @@ exports.rotateMany = function (array, n) {
 */
 
 exports.separatePairsAndOdds = function (array) {
-
     let long = array.length;
     let contador = 0;
     for (let i = 0; i < long; i++) {
@@ -675,7 +676,6 @@ exports.separatePairsAndOdds = function (array) {
         if (array[i] % 2 !== 0) {
            let extractedNumber = array.splice(i, 1)
             array.push(extractedNumber[0])
-            console.log(array)
             i--;
         }
         if(contador === long) {
