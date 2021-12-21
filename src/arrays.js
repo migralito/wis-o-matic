@@ -20,7 +20,7 @@
  */
 
 
-const {rotateMany} = require("./arrays");
+const { rotateMany } = require("./arrays");
 exports.printArrayElementsUsingForOf = function (array, console) {
     for (const arrayElement of array) {
         console.log(arrayElement)
@@ -526,16 +526,16 @@ exports.removeAtIndex = function (array, index) {
     // TODO well done!
     //  Now, I will ask you to remove this implementation, and use a specific array method that will allow you to solve
     //  this instead of using a loop
-   /*  for (let i = 0; i < array.length; i++) {
-        if (i === array.length - 1) {
-            array.pop();
-            return array;
-        }
-        if (i >= index) {
-            array[i] = array[i + 1];
-        }
-    }
-     */
+    /*  for (let i = 0; i < array.length; i++) {
+         if (i === array.length - 1) {
+             array.pop();
+             return array;
+         }
+         if (i >= index) {
+             array[i] = array[i + 1];
+         }
+     }
+      */
     array.splice(index, 1)
 };
 
@@ -601,19 +601,19 @@ exports.insertAtIndex = function (array, index, number) {
 exports.rotate = function (array) {
     // TODO well done!
     //  Now, I will ask you to remove this implementation, and reuse rotateMany method
-   /* let lastNumberArray = array[array.length - 1];
-    let numberLastReplaced;
-    let currentNumber;
-    for (let i = 0; i < array.length; i++) {
-        if (i === 0) {
-            numberLastReplaced = array[i];
-            array[i] = lastNumberArray;
-        } else {
-            currentNumber = array[i];
-            array[i] = numberLastReplaced;
-            numberLastReplaced = currentNumber;
-        }
-    }*/
+    /* let lastNumberArray = array[array.length - 1];
+     let numberLastReplaced;
+     let currentNumber;
+     for (let i = 0; i < array.length; i++) {
+         if (i === 0) {
+             numberLastReplaced = array[i];
+             array[i] = lastNumberArray;
+         } else {
+             currentNumber = array[i];
+             array[i] = numberLastReplaced;
+             numberLastReplaced = currentNumber;
+         }
+     }*/
     exports.rotateMany(array, 1)
 };
 
@@ -637,7 +637,7 @@ exports.rotate = function (array) {
  * 1 hour
  */
 exports.rotateMany = function (array, n) {
-    for (let i = array.length - 1; i >= array.length - n; i--) {
+    for (let i = array.length; i > array.length - n; i--) {
         let numberDisplaced = array.pop()
         array.unshift(numberDisplaced);
     }
@@ -663,26 +663,27 @@ exports.rotateMany = function (array, n) {
  *
  * ### Estimated amount of time needed to complete the task
  * 1 day
- */
+
+*/
+
 exports.separatePairsAndOdds = function (array) {
-  /*   let lengthArray = array.length;
-    for (let i = 0; i < lengthArray; i++) {
-        if (array[0] % 2 !== 0) {
-            let numberDisplaced = array.shift(array[0])
-            array.push(numberDisplaced); 
-        } else {
-            let numberPair = array[0];
-            for (let i = 1; i < array.length; i++) {
-                if(array[i] % 2 !== 0) {
-                    array[0] = array[i];
-                    array[i] = numberPair;
-                    numberDisplaced = array.shift(array[0]);
-                    array.push(numberDisplaced);
-                    i--;
-                }   
-            }
+
+    let long = array.length;
+    let contador = 0;
+    for (let i = 0; i < long; i++) {
+        contador++;
+        if (array[i] % 2 !== 0) {
+           let extractedNumber = array.splice(i, 1)
+            array.push(extractedNumber[0])
+            console.log(array)
+            i--;
         }
-    }*/
-}; 
+        if(contador === long) {
+            return array
+        }
+    }
+};
+
+
 
 
